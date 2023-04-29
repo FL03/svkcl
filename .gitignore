@@ -1,0 +1,55 @@
+# Artifacts
+**/.artifacts/
+**/.docker/data/
+**/.vercel/
+
+**/build/
+**/debug/
+**/dist/
+**/out/
+
+# Config
+**/.config/
+
+*.env
+*.env.*
+
+!config.default.*
+!*.env.example
+!*.env.*.example
+
+# File Extensions
+*.csv
+*.csv.*
+
+*.lock
+*.lock.*
+
+*-lock.*
+
+*.log
+*.log.*
+
+*.timestamp-*
+
+# Firebase
+**/.firebase/
+
+# IDEs
+**/.idea/
+**/.vscode/
+
+# Node
+**/node_modules/
+**/build/
+
+**/package/
+**/pkg/
+
+**/package-lock.json
+**/yarn.lock
+
+# Svelte
+**/__sapper__/
+**/.DS_Store/
+**/.svelte-kit/
