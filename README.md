@@ -1,10 +1,10 @@
 # svkcl
 
-***
+---
 
 _**This library is currently in development and is not yet ready for use.**_
 
-Welcome to svkcl, a SvelteKit component library focused on providing a core set of dynamic components for use in SvelteKit projects. 
+Welcome to svkcl, a SvelteKit component library focused on providing a core set of dynamic components for use in SvelteKit projects.
 
 Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 

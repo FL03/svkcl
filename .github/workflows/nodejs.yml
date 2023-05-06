@@ -6,13 +6,13 @@ env:
 
 on:
   pull_request:
-    branches-ignore: [ beta*, dev*, next*, nightly* ]
+    branches-ignore: [beta*, dev*, next*, nightly*]
   push:
-    branches-ignore: [ beta*, dev*, next*, nightly* ]
-    tags: [ v*.*.* ]
+    branches-ignore: [beta*, dev*, next*, nightly*]
+    tags: [v*.*.*]
   release:
   repository_dispatch:
-    types: [ node ]
+    types: [node]
   workflow_dispatch:
     inputs:
       node-version:
