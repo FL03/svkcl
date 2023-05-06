@@ -18,13 +18,14 @@
   // Provides the favicon for the navbar
   export let src: string = favicon;
   $: if (innerWidth > 1024) {
-			lg = true;
-		} else {
-			lg = false;
-		}
+    lg = true;
+  } else {
+    lg = false;
+  }
 </script>
+
 <!-- <svelte:component this={lg ? options[0].component : options[1].component} /> -->
-<svelte:window bind:innerWidth/>
+<svelte:window bind:innerWidth />
 
 <nav
   class="bg-transparent prose prose-invert min-w-full max-w-screen my-0 p-3 sticky top-0"
@@ -48,14 +49,13 @@
     {#if innerWidth < 1024}
       <DropToggle bind:open />
       <Navdrop bind:open {auth} {links}>
-        <slot/>
+        <slot />
       </Navdrop>
     {:else}
-      <slot/>
+      <slot />
     {/if}
   </div>
 </nav>
-
 
 <style>
   nav {

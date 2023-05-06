@@ -1,5 +1,5 @@
 // Reexport your entry components here
-
+import App from '$lib/App.svelte';
 import Button, { ButtonGroup } from '$lib/btn/index.js';
 import Card from '$lib/card/index.js';
 import Footer from '$lib/footer/index.js';
@@ -14,3 +14,5 @@ export { Dropdown, DropItem, DropToggle };
 export { Arrow, ExternalLibrary, Map, StackedIcon };
 export { Navbar, NavItem, NavLogo };
 export { Sidebar, SidebarToggle };
+
+export default App;

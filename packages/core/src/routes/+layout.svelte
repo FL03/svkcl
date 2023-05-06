@@ -1,15 +1,13 @@
 <script lang="ts">
   import '$lib/assets/css/tailwind.css';
-  
+
   let bg = 'bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900';
 </script>
 
 <div
   class="flex flex-col grow nowrap m-0 p-0 min-h-screen min-w-full max-w-screen prose dark:prose-invert {bg}"
   id="app"
->
-
-</div>
+/>
 
 <style>
   .bg-gradient-to-br {

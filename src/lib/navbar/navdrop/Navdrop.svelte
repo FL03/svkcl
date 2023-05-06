@@ -38,7 +38,7 @@
           {/each}
         </div>
         <div class="py-6">
-          <slot/>
+          <slot />
         </div>
       </div>
     </div>
