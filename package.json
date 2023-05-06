@@ -5,6 +5,10 @@
     "url": "https://github.com/FL03"
   },
   "bugs": "https://github.com/FL03/svkcl/issues",
+  "bundledDependencies": [
+    "@svkcl/core",
+    "@svkcl/maps"
+  ],
   "devDependencies": {
     "@sveltejs/adapter-auto": "latest",
     "@sveltejs/kit": "latest",
@@ -31,12 +35,13 @@
   },
   "exports": {
     ".": {
-      "svelte": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
     }
   },
   "files": [
     "dist",
+    "dist/**/*",
     "!dist/**/*.test.*",
     "!dist/**/*.spec.*"
   ],
@@ -63,7 +68,7 @@
     "prepublishOnly": "npm run package",
     "preview": "vite preview --host --port 3000"
   },
-  "svelte": "./dist/index.js",
+  "svelte": "./dist/index.ts",
   "type": "module",
   "types": "./dist/index.d.ts",
   "version": "0.0.8",

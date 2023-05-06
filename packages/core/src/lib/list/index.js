@@ -1,4 +1,3 @@
-
-import FilterableList from "./FilterableList.svelte";
+import FilterableList from './FilterableList.svelte';
 
 export { FilterableList };

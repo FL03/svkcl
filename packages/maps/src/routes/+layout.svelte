@@ -1,7 +1,6 @@
 <script lang="ts">
   import '$lib/assets/css/tailwind.css';
 
-
   let bg = 'bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900';
 </script>
 

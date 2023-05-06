@@ -9,7 +9,7 @@
   class:open
   on:click={() => (open = !open)}
 >
-  Controls
+  <slot>{open ? 'open' : 'closed'}</slot>
 </button>
 
 <style>

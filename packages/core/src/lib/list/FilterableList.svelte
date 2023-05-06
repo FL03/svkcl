@@ -1,45 +1,45 @@
 <script lang="ts">
-	export let data: any[];
-	export let field: string;
+  export let data: any[];
+  export let field: string;
 
-	let search = '';
+  let search = '';
 
-	$: regex = search ? new RegExp(search, 'i') : null;
-	$: matches = (item: any) => regex ? regex.test(item[field]) : true;
+  $: regex = search ? new RegExp(search, 'i') : null;
+  $: matches = (item: any) => (regex ? regex.test(item[field]) : true);
 </script>
 
 <div class="list">
-	<label>
-		Filter: <input bind:value={search} />
-	</label>
+  <label>
+    Filter: <input bind:value={search} />
+  </label>
 
-	<div class="header">
-		<slot name="header"/>
-	</div>
-	
-	<div class="content">
-		{#each data.filter(matches) as item}
-			<slot {item} />
-		{/each}
-	</div>
+  <div class="header">
+    <slot name="header" />
+  </div>
+
+  <div class="content">
+    {#each data.filter(matches) as item}
+      <slot {item} />
+    {/each}
+  </div>
 </div>
 
 <style>
-	.list {
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-	}
+  .list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
-	.header {
-		border-top: 1px solid var(--bg-2);
-		padding: 0.2em 0;
-	}
+  .header {
+    border-top: 1px solid var(--bg-2);
+    padding: 0.2em 0;
+  }
 
-	.content {
-		flex: 1;
-		overflow: auto;
-		padding-top: 0.5em;
-		border-top: 1px solid var(--bg-2);
-	}
+  .content {
+    flex: 1;
+    overflow: auto;
+    padding-top: 0.5em;
+    border-top: 1px solid var(--bg-2);
+  }
 </style>

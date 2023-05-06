@@ -1,7 +1,7 @@
 <script lang="ts">
   import NavLogo from '$lib/navbar/NavLogo.svelte';
   import DropItem from './DropItem.svelte';
-  import type { Link } from '$lib/types';
+  import type { Link } from '$lib/types.js';
 
   export let auth = false;
   export let links: Link[] = [

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { Link } from '@lib/types';
+  import type { Link } from '$lib/types.ts';
 
   export let open = false;
   export let title = 'Controls';

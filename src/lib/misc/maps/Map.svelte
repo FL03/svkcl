@@ -1,14 +1,13 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from 'svelte';
+  import { onMount } from 'svelte';
+  import ExternalLibrary from '$lib/misc/ExternalLibrary.svelte';
 
-  const dispatch = createEventDispatcher();
   // Map options
-	export let apiKey: string;
+  export let apiKey: string;
   export let center: google.maps.LatLngLiteral = { lat: 2.8, lng: -187.3 };
   export let zoom: number = 2;
 
-	let url: string = "https://maps.googleapis.com/maps/api/js?key=" + apiKey + '&callback=initMap';
-  let script: HTMLScriptElement;
+  let url: string = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=initMap';
 
   let map: google.maps.Map;
   let container: HTMLElement;
@@ -16,34 +15,28 @@
   function initMap(): void {
     map = new google.maps.Map(container, {
       center,
-      zoom,
+      zoom
     });
   }
-    
-	onMount(async () => {
-		script.addEventListener('load', () => {
-      dispatch('loaded');
-    })
 
-    script.addEventListener('error', (event) => {
-      console.error("something went wrong", event);
-      dispatch('error');
-    });
-		initMap();
-	});
+  onMount(async () => {
+    initMap();
+  });
 </script>
 
-<svelte:head>
-  <script bind:this={script} src={url} />
-</svelte:head>
+<ExternalLibrary {url} />
 
-<div class="map rounded-lg" bind:this={container}></div>
+<div class="map" bind:this={container} />
 
 <style>
   .map {
+    border: var(--bd, thin solid) var(--color, #000);
+    border-radius: var(--bdr, 0.75rem);
+    color: var(--color, #000);
     display: var(--display, flex);
-    min-height: 25vh;
-    min-width: 25vw;
-    padding: 0;
+    margin: var(--m, 0);
+    min-height: var(--mh, 25vh);
+    min-width: var(--mw, 25vw);
+    padding: var(--pd, 0);
   }
 </style>
