@@ -14,7 +14,14 @@
   class="flex flex-col grow nowrap m-0 p-0 min-h-screen min-w-full max-w-screen prose dark:prose-invert {bg}"
   id="app"
 >
-  <Navbar name={'svkcl'} toggle={() => {console.log('hello')}} {links} />
+  <Navbar name={'svkcl'} {links}>
+    <button 
+      class="bg-transparent border border-white hover:bg-white hover:text-black px-3 py-2 rounded text-white" 
+      on:click={() => alert('Login button clicked')}
+    >
+      Login
+    </button>
+  </Navbar>
   <main class="flex grow m-0 p-0 min-h-full min-w-full items-center justify-center">
     <div class="container mx-auto">
       <slot />

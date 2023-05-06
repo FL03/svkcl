@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let props: string | undefined;
+  export let props: string | undefined = '';
   export let toggle = () => {};
 </script>
 

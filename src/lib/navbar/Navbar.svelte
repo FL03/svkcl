@@ -6,9 +6,9 @@
   import NavLogo from './NavLogo.svelte';
 
   let innerWidth = 0;
+  let lg = false;
   let open = false;
 
-  export let toggle = () => {};
   // Allows the navbar to respond to external auth state
   export let auth = false;
   // Provides the links for the navbar
@@ -17,8 +17,13 @@
   export let name = 'SvelteKit';
   // Provides the favicon for the navbar
   export let src: string = favicon;
+  $: if (innerWidth > 1024) {
+			lg = true;
+		} else {
+			lg = false;
+		}
 </script>
-
+<!-- <svelte:component this={lg ? options[0].component : options[1].component} /> -->
 <svelte:window bind:innerWidth/>
 
 <nav
@@ -42,19 +47,15 @@
   <div class="justify-end">
     {#if innerWidth < 1024}
       <DropToggle bind:open />
+      <Navdrop bind:open {auth} {links}>
+        <slot/>
+      </Navdrop>
     {:else}
-      <slot name="gutter">
-        <button
-          class="bg-transparent border border-white hover:bg-white hover:text-black px-3 py-2 rounded text-white"
-          on:click={toggle}
-        >
-          Login
-        </button>
-      </slot>
+      <slot/>
     {/if}
   </div>
 </nav>
-<Navdrop bind:open {auth} {links} />
+
 
 <style>
   nav {

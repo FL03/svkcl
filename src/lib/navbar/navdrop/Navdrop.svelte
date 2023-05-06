@@ -13,7 +13,7 @@
 </script>
 
 <aside
-  class="dropdown absolute flex max-w-md w-full items-center justify-between h-full opacity-95 top-0 py-24 shadow-lg drop-shadow"
+  class="dropdown absolute flex max-w-md w-full items-center justify-between opacity-95 py-24 shadow-lg drop-shadow"
   class:open
   on:keydown={(e) => {
     if (e.key === 'Escape') open = false;
@@ -23,7 +23,7 @@
   <!-- Background backdrop, show/hide based on slide-over state. -->
   <div class="fixed inset-0 z-50" />
   <div
-    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
   >
     <NavLogo>{title}</NavLogo>
     <div class="mt-6 flow-root">
@@ -38,9 +38,7 @@
           {/each}
         </div>
         <div class="py-6">
-          <slot name="gutter">
-            <button>Login</button>
-          </slot>
+          <slot/>
         </div>
       </div>
     </div>
@@ -49,9 +47,14 @@
 
 <style>
   .dropdown {
-    color: var(--color, white);
+    background-color: var(--bg, grey);
+    color: var(--color, black);
+    min-height: var(--min-height, 100vh);
+    position: absolute;
     right: -100%;
+    top: 0;
     transition: left 0.3s ease-in-out;
+    z-index: var(--z, 50);
   }
   .open {
     right: 0;
