@@ -1,5 +1,5 @@
 // Reexport your entry components here
 
-import * as navbar from '$lib/navbar/index.js';
+import Navbar, { NavItem, NavLogo } from '$lib/navbar/index.js';
 
-export { navbar };
+export { Navbar, NavItem, NavLogo };

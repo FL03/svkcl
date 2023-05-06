@@ -1,6 +1,6 @@
 <script lang="ts">
   import '$lib/assets/css/tailwind.css';
-  import Navbar from '$lib/navbar/Navbar.svelte';
+  import { Navbar } from '$lib/index.js';
   import Footer from '$lib/footer/Footer.svelte';
 
   let bg = 'bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900';
