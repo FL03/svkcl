@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Link } from '$lib/types';
+  import type { Link } from '$lib/types.ts';
   import NavItem from './NavItem.svelte';
 
   // Allows the
