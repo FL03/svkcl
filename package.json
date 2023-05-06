@@ -43,6 +43,7 @@
   "license": "Apache-2.0",
   "name": "@pzzld/svkcl",
   "peerDependencies": {
+    "@sveltejs/kit": "latest",
     "svelte": "latest"
   },
   "readme": "https://github.com/FL03/svkcl/#README",
