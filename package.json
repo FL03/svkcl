@@ -11,6 +11,7 @@
     "@sveltejs/package": "latest",
     "@tailwindcss/forms": "latest",
     "@tailwindcss/typography": "latest",
+    "@types/google.maps": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "autoprefixer": "latest",
@@ -30,8 +31,8 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
+      "svelte": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
