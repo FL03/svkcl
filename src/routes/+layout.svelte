@@ -1,7 +1,7 @@
 <script lang="ts">
   import '$lib/assets/css/tailwind.css';
   import { Footer, Navbar } from '$lib/index.js';
-  import type { Link } from '$lib/types.js';
+  import type { Link } from '$lib/types.ts';
 
   let links: Link[] = [
     { label: 'About', href: '/about' },

@@ -1,5 +1,5 @@
 // Reexport your entry components here
-import type { Link } from '$lib/types.d.ts';
+import type { Link } from '$lib/types.ts';
 import Card from '$lib/card/index.js';
 import Footer from '$lib/footer/index.js';
 import { Dropdown, DropItem, DropToggle } from '$lib/menu/index.js';
