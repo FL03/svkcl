@@ -68,7 +68,7 @@
     "prepublishOnly": "npm run package",
     "preview": "vite preview --host --port 3000"
   },
-  "svelte": "./dist/index.ts",
+  "svelte": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
   "version": "0.0.8",
