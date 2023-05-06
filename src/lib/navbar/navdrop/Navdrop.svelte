@@ -1,6 +1,7 @@
 <script lang="ts">
   import NavLogo from '$lib/navbar/NavLogo.svelte';
   import DropItem from './DropItem.svelte';
+  import { clickOutside } from '$lib/utils/index.js';
   import type { Link } from '$lib/types.ts';
 
   export let auth = false;
@@ -17,6 +18,11 @@
   class:open
   on:keydown={(e) => {
     if (e.key === 'Escape') open = false;
+    if (e.key === 'Tab') open = false;
+  }}
+  use:clickOutside
+  on:click_outside={() => {
+    open = false;
   }}
   style="display: {open ? 'flex' : 'none'}"
 >

@@ -1,6 +1,5 @@
 <script>
-  import Button from '$lib/btn/Button.svelte';
-  import { Card } from '$lib/index.js';
+  import { Button, Card } from '$lib/core/index.js';
 
   let count = 0;
 </script>
