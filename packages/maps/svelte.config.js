@@ -6,7 +6,11 @@ export default {
   kit: {
     adapter: adapter()
   },
-  preprocess: vitePreprocess({
-    postcss: true
-  })
+  preprocess: [
+    vitePreprocess({
+      style: {
+        plugins: []
+      }
+    })
+  ]
 };

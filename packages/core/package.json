@@ -1,17 +1,10 @@
 {
-  "author": {
-    "email": "jo3mccain@icloud.com",
-    "name": "FL03",
-    "url": "https://github.com/FL03"
-  },
-  "bugs": "https://github.com/FL03/svkcl/issues",
   "devDependencies": {
     "@sveltejs/adapter-auto": "latest",
     "@sveltejs/kit": "latest",
     "@sveltejs/package": "latest",
     "@tailwindcss/forms": "latest",
     "@tailwindcss/typography": "latest",
-    "@types/google.maps": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "autoprefixer": "latest",
@@ -40,17 +33,10 @@
     "!dist/**/*.test.*",
     "!dist/**/*.spec.*"
   ],
-  "homepage": "https://github.com/FL03/svkcl/wiki",
-  "license": "Apache-2.0",
-  "name": "@pzzld/svkcl",
+  "name": "@svkcl/core",
   "peerDependencies": {
     "@sveltejs/kit": "latest",
     "svelte": "latest"
-  },
-  "readme": "https://github.com/FL03/svkcl/#README",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FL03/svkcl.git"
   },
   "scripts": {
     "build": "vite build && npm run package",
@@ -65,9 +51,5 @@
   },
   "svelte": "./dist/index.js",
   "type": "module",
-  "types": "./dist/index.d.ts",
-  "version": "0.0.8",
-  "workspaces": [
-    "packages/*"
-  ]
+  "types": "./dist/index.d.ts"
 }
