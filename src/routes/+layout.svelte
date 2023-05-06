@@ -20,7 +20,7 @@
       <slot />
     </div>
   </main>
-  <Footer>
+  <Footer --color="white">
     <svelte:fragment slot="lhs">
       <a href="/">Home</a>
     </svelte:fragment>

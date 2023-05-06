@@ -37,7 +37,7 @@
   <div class="justify-end">
     <DropToggle bind:open />
     <div class="lg:inline-flex hidden">
-      <slot name="gutter">
+      <slot>
         <button
           class="bg-gradient-to-r from-cyan-700 via-cyan-500 to-cyan-900 prose dark:prose-invert rounded drop-shadow shadow-lg lg:inline-flex hidden"
         >
@@ -51,11 +51,12 @@
 
 <style>
   nav {
-    align-items: center;
+    align-items: var(--align, center);
+    background-color: var(--bg, transparent);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: var(--justify, center);
     max-height: 10vh;
     max-width: 100vw;
     min-width: 100%;

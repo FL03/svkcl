@@ -32,6 +32,7 @@
   }
   .content {
     align-items: var(--align, center);
+    color: inherit;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -41,6 +42,7 @@
   }
   .gutter {
     align-items: center;
+    color: inherit;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -48,10 +50,10 @@
     padding: 0.75rem 1.5rem;
     width: max-content;
   }
-  .gutter .gutter-left {
+  .gutter-left {
     margin: 0 0 0 auto;
   }
-  .gutter .gutter-right {
+  .gutter-right {
     margin-left: auto;
   }
 </style>

@@ -1,5 +1,8 @@
 <script>
+  import Button from '$lib/btn/Button.svelte';
   import { Card } from '$lib/index.js';
+
+  let count = 0;
 </script>
 
 <div>
@@ -14,6 +17,12 @@
   </svelte:fragment>
   <svelte:fragment slot="content">
     <p>Card content</p>
+    <Button
+      --bg="cyan"
+      toggle={() => {
+        count++;
+      }}>{count}</Button
+    >
   </svelte:fragment>
   <svelte:fragment slot="footer">
     <p>Card footer</p>
