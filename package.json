@@ -5,12 +5,17 @@
     "url": "https://github.com/FL03"
   },
   "bugs": "https://github.com/FL03/svkcl/issues",
+  "bundledDependencies": [
+    "@svkcl/core",
+    "@svkcl/maps"
+  ],
   "devDependencies": {
     "@sveltejs/adapter-auto": "latest",
     "@sveltejs/kit": "latest",
     "@sveltejs/package": "latest",
     "@tailwindcss/forms": "latest",
     "@tailwindcss/typography": "latest",
+    "@types/google.maps": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "autoprefixer": "latest",
@@ -36,6 +41,7 @@
   },
   "files": [
     "dist",
+    "dist/**/*",
     "!dist/**/*.test.*",
     "!dist/**/*.spec.*"
   ],
@@ -65,5 +71,8 @@
   "svelte": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "0.0.7"
+  "version": "0.0.8",
+  "workspaces": [
+    "packages/*"
+  ]
 }

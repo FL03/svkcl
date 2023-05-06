@@ -1,6 +1,6 @@
 <script lang="ts">
   import favicon from '$lib/assets/media/svelte-logo.svg';
-  import type { Link } from '$lib/types';
+  import type { Link } from '$lib/types.ts';
   import Navdrop, { DropToggle } from '$lib/navbar/navdrop/index.js';
   import NavItem from './NavItem.svelte';
   import NavLogo from './NavLogo.svelte';
@@ -37,24 +37,26 @@
   <div class="justify-end">
     <DropToggle bind:open />
     <div class="lg:inline-flex hidden">
-      <slot name='gutter'>
-        <button class="bg-gradient-to-r from-cyan-700 via-cyan-500 to-cyan-900 prose dark:prose-invert rounded drop-shadow shadow-lg lg:inline-flex hidden">
+      <slot>
+        <button
+          class="bg-gradient-to-r from-cyan-700 via-cyan-500 to-cyan-900 prose dark:prose-invert rounded drop-shadow shadow-lg lg:inline-flex hidden"
+        >
           Login
         </button>
       </slot>
     </div>
-    
   </div>
 </nav>
 <Navdrop bind:open {auth} {links} />
 
 <style>
   nav {
-    align-items: center;
+    align-items: var(--align, center);
+    background-color: var(--bg, transparent);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: var(--justify, center);
     max-height: 10vh;
     max-width: 100vw;
     min-width: 100%;

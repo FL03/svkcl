@@ -1,8 +1,12 @@
 <script lang="ts">
   import '$lib/assets/css/tailwind.css';
-  import { Navbar } from '$lib/index.js';
-  import Footer from '$lib/footer/Footer.svelte';
+  import { Footer, Navbar } from '$lib/index.js';
+  import type { Link } from '$lib/types.js';
 
+  let links: Link[] = [
+    { label: 'About', href: '/about' },
+    { label: 'Maps', href: '/maps' }
+  ];
   let bg = 'bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900';
 </script>
 
@@ -10,13 +14,13 @@
   class="flex flex-col grow nowrap m-0 p-0 min-h-screen min-w-full max-w-screen prose dark:prose-invert {bg}"
   id="app"
 >
-  <Navbar name={'svkcl'} />
+  <Navbar name={'svkcl'} {links} />
   <main class="flex grow m-0 p-0 min-h-full min-w-full items-center justify-center">
     <div class="container mx-auto">
       <slot />
     </div>
   </main>
-  <Footer>
+  <Footer --color="white">
     <svelte:fragment slot="lhs">
       <a href="/">Home</a>
     </svelte:fragment>
