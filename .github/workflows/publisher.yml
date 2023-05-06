@@ -27,6 +27,6 @@ jobs:
           node-version: 18
           registry-url: https://npm.pkg.github.com/
       - run: npm install && npm run package
-      - run: npm publish --include-workspace-root --access public
+      - run: npm publish --include-workspace-root
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
