@@ -1,7 +1,7 @@
 <script lang="ts">
   import NavLogo from '$lib/navbar/NavLogo.svelte';
   import DropItem from './DropItem.svelte';
-  import type { Link } from '$lib/types.js';
+  import type { Link } from '$lib/types.ts';
 
   export let auth = false;
   export let links: Link[] = [
@@ -13,7 +13,7 @@
 </script>
 
 <aside
-  class="dropdown absolute text-white flex max-w-md w-full items-center justify-between h-full opacity-95 top-0 py-24 shadow-lg drop-shadow"
+  class="dropdown absolute flex max-w-md w-full items-center justify-between h-full opacity-95 top-0 py-24 shadow-lg drop-shadow"
   class:open
   on:keydown={(e) => {
     if (e.key === 'Escape') open = false;
@@ -49,6 +49,7 @@
 
 <style>
   .dropdown {
+    color: var(--color, white);
     right: -100%;
     transition: left 0.3s ease-in-out;
   }

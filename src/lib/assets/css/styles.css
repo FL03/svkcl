@@ -1,75 +1,37 @@
-h1,
-h2,
-p {
-  font-weight: 400;
-}
 
-p {
-  line-height: 1.5;
-}
 
-a {
-  color: var(--color-theme-1);
-  text-decoration: none;
-}
 
-a:hover {
-  text-decoration: underline;
-}
-
-h1 {
-  font-size: 2rem;
+.text-center {
   text-align: center;
 }
 
-h2 {
-  font-size: 1rem;
+
+.screen {
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
-pre {
-  font-size: 16px;
-  font-family: var(--font-mono);
-  background-color: rgba(255, 255, 255, 0.45);
-  border-radius: 3px;
-  box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-  padding: 0.5em;
-  overflow-x: auto;
-  color: var(--color-text);
+/* Background */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--from), var(--via), var(--to));
 }
 
-.text-column {
-  display: flex;
-  max-width: 48rem;
-  flex: 0.6;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
+.bg-gradient-to-bl {
+  background-image: linear-gradient(to bottom left, var(--from), var(--via), var(--to));
 }
 
-input,
-button {
-  font-size: inherit;
-  font-family: inherit;
+.bg-gradient-to-tr {
+  background-image: linear-gradient(to top right, var(--from), var(--via), var(--to));
 }
 
-button:focus:not(:focus-visible) {
-  outline: none;
+.bg-gradient-to-tl {
+  background-image: linear-gradient(to top left, var(--from), var(--via), var(--to));
 }
 
-@media (min-width: 720px) {
-  h1 {
-    font-size: 2.4rem;
-  }
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--from), var(--via), var(--to));
 }
 
-.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: auto;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
+.bg-gradient-to-l {
+  background-image: linear-gradient(to left, var(--from), var(--via), var(--to));
 }
