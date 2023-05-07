@@ -31,7 +31,7 @@
 <style>
   .map {
     border: var(--bd, thin solid) var(--color, #000);
-    border-radius: var(--bdr, 0.75rem);
+    border-radius: var(--rounded, 0.75rem);
     color: var(--color, #000);
     display: var(--display, flex);
     margin: var(--m, 0);
