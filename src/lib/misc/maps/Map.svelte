@@ -1,18 +1,19 @@
 <script lang=ts>
   import { onMount } from 'svelte';
+  import type { MapOptions } from './types/mapOptions.ts';
+  import { defaultMapOptions } from './types/mapOptions.ts';
+  import ExternalLibrary from '$lib/misc/ExternalLibrary.svelte';
   // Map options
-  export let apiKey: string;
-  export let center: google.maps.LatLngLiteral = { lat: 37.774546, lng: -122.433523 }; // San Francisco
-  export let zoom: number = 13;
+  export let apiKey: string = '';
+  export let options: MapOptions = defaultMapOptions;
 
-  let map: google.maps.Map;
+  export let map: google.maps.Map | null = null;
   let container: HTMLElement;
 
   function initMap(): void {
-    map = new google.maps.Map(container, {
-      center,
-      zoom
-    });
+    if (map === null) {
+      map = new google.maps.Map(container, options);
+    }
   }
 
   onMount(() => {
@@ -20,15 +21,12 @@
   });
 </script>
 
-<svelte:head>
-	<script defer async src="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries=visualization&callback=initMap"></script>
-</svelte:head>
+<ExternalLibrary url="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries=visualization&callback=initMap" on:loaded={initMap}/>
 
-
-<div class="map" bind:this={container} />
+<div id="map" bind:this={container} />
 
 <style>
-  .map {
+  #map {
     align-items: var(--align, center);
     border: var(--bd, thin solid) var(--color, #000);
     border-radius: var(--rounded, 1.5rem);

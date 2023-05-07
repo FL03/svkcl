@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-  <script bind:this={script} src={url}></script>
+  <script defer bind:this={script} src={url}></script>
 </svelte:head>
 
 <style>
