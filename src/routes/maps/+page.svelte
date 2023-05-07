@@ -30,12 +30,12 @@
   });
 </script>
 
-<section class="flex min-h-full min-w-full grow">
-  <div class="flex items-center justify-center">
+<section class="flex flex-col min-h-full min-w-full grow">
+  <div class="flex z-50 bg-white items-center justify-center">
     <MapToggle props="" toggle={toggleHeatmap}>Heatmap</MapToggle>
     <MapToggle props="" toggle={changeGradient}>Gradient</MapToggle>
     <MapToggle props="" toggle={changeOpacity}>Opacity</MapToggle>
     <MapToggle props="" toggle={changeRadius}>Radius</MapToggle>
   </div>
-  <Map apiKey={PUBLIC_GOOGLE_MAPS_API_KEY} bind:map --min-height="50vh" --min-width="50vw" />
+  <Map apiKey={PUBLIC_GOOGLE_MAPS_API_KEY} bind:map class="grow" --min-height="50vh" --min-width="50vw" />
 </section>
