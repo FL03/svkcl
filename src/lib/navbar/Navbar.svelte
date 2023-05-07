@@ -70,12 +70,4 @@
     min-width: 100%;
     z-index: 50;
   }
-  button {
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 0.75rem 1.5rem;
-    width: max-content;
-  }
 </style>

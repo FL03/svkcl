@@ -1,10 +1,13 @@
-<script lang="ts">
-  export let props: string | undefined = '';
+<script lang=ts>
   export let toggle = () => {};
+
+  export let props: string | undefined = '';
+  export let tag: string | undefined = '';
 </script>
 
 <button 
-  class={props} 
+  class="{props}"
+  id="{tag}"
   on:click={toggle}
 >
   <slot/>
@@ -16,7 +19,6 @@
     background-color: var(--bg, transparent);
     border: var(--bd, thin solid) var(--color);
     border-radius: var(--rounded, 0.75rem);
-    box-shadow: var(--shadow, none);
     color: var(--color, black);
     display: var(--display, inline-flex);;
     justify-content: var(--justify, center);

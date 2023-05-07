@@ -10,6 +10,7 @@
     "@svkcl/maps"
   ],
   "devDependencies": {
+    "@googlemaps/google-maps-services-js": "latest",
     "@sveltejs/adapter-auto": "latest",
     "@sveltejs/kit": "latest",
     "@sveltejs/package": "latest",

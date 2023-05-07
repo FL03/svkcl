@@ -1,13 +1,9 @@
-<script lang="ts">
+<script lang=ts>
   import { onMount } from 'svelte';
-  import ExternalLibrary from '$lib/misc/ExternalLibrary.svelte';
-
   // Map options
   export let apiKey: string;
-  export let center: google.maps.LatLngLiteral = { lat: 2.8, lng: -187.3 };
-  export let zoom: number = 2;
-
-  let url: string = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey + '&callback=initMap';
+  export let center: google.maps.LatLngLiteral = { lat: 37.774546, lng: -122.433523 }; // San Francisco
+  export let zoom: number = 13;
 
   let map: google.maps.Map;
   let container: HTMLElement;
@@ -19,24 +15,31 @@
     });
   }
 
-  onMount(async () => {
+  onMount(() => {
     initMap();
   });
 </script>
 
-<ExternalLibrary on:loaded={initMap} {url} />
+<svelte:head>
+	<script defer async src="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries=visualization&callback=initMap"></script>
+</svelte:head>
+
 
 <div class="map" bind:this={container} />
 
 <style>
   .map {
+    align-items: var(--align, center);
     border: var(--bd, thin solid) var(--color, #000);
-    border-radius: var(--rounded, 0.75rem);
+    border-radius: var(--rounded, 1.5rem);
     color: var(--color, #000);
     display: var(--display, flex);
-    margin: var(--m, 0);
-    min-height: var(--mh, 25vh);
-    min-width: var(--mw, 25vw);
+    justify-content: var(--justify, center);
+    margin: var(--m, 0 auto);
+    max-height: var(--max-height, 75vh);
+    max-width: var(--max-width, 75vw);
+    min-height: var(--min-height, 25vh);
+    min-width: var(--min-width, 25vw);
     padding: var(--pd, 0);
   }
 </style>
