@@ -1,9 +1,14 @@
 <script lang="ts">
+  let className: string = '';
+
+	// creates a `class` property, even
+	// though it is a reserved word
+	export { className as class };
 </script>
 
-<div class="card">
+<div class="card {className}">
   <section class="card-header">
-    <slot name="header"/>
+    <slot name="header" />
   </section>
   <section class="card-body">
     <slot name="content" />

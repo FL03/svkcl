@@ -1,3 +1,2 @@
-import Hero from "./hero/index.js";
+import Hero from './hero/index.js';
 export { Hero };
-

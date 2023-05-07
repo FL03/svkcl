@@ -1,14 +1,9 @@
-<script lang=ts>
+<script lang="ts">
   import { onMount } from 'svelte';
-  import MapToggle from '$lib/misc/maps/MapToggle.svelte';
+  import { PUBLIC_GOOGLE_MAPS_API_KEY } from '$env/static/public';
+  import Map, { MapToggle } from '$lib/misc/maps/index.js';
   import { getPoints, heatmapGradients } from './heatmap.ts';
 
-  // Map options
-  export let apiKey: string = '';
-  export let center: google.maps.LatLngLiteral = { lat: 37.774546, lng: -122.433523 }; // San Francisco
-  export let zoom: number = 13;
-
-  let container: HTMLElement;
   let map: google.maps.Map;
   let heatmap: google.maps.visualization.HeatmapLayer;
 
@@ -17,38 +12,25 @@
   }
 
   function changeGradient(): void {
-    heatmap.set("gradient", heatmap.get("gradient") ? null : heatmapGradients);
+    heatmap.set('gradient', heatmap.get('gradient') ? null : heatmapGradients);
   }
 
   function changeRadius(): void {
-    heatmap.set("radius", heatmap.get("radius") ? null : 20);
+    heatmap.set('radius', heatmap.get('radius') ? null : 20);
   }
 
   function changeOpacity(): void {
-    heatmap.set("opacity", heatmap.get("opacity") ? null : 0.2);
+    heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
   }
-  
 
-  function initMap(): void {
-    map = new google.maps.Map(container, {
-      center,
-      zoom
-    });
+  onMount(() => {
     heatmap = new google.maps.visualization.HeatmapLayer({
       data: getPoints(),
       map,
       radius: 20
     });
-  }
-
-  onMount(() => {
-    initMap();
   });
 </script>
-
-<svelte:head>
-	<script defer async src="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries=visualization&callback=initMap"></script>
-</svelte:head>
 
 <section class="flex min-h-full min-w-full grow">
   <div class="flex items-center justify-center">
@@ -57,7 +39,7 @@
     <MapToggle props="" toggle={changeOpacity}>Opacity</MapToggle>
     <MapToggle props="" toggle={changeRadius}>Radius</MapToggle>
   </div>
-  <div class="map" bind:this={container} />
+  <Map apiKey={PUBLIC_GOOGLE_MAPS_API_KEY} bind:map --min-height="50vh" --min-width="50vw" />
 </section>
 
 <style>

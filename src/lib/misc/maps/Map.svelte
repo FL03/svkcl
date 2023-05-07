@@ -1,29 +1,34 @@
-<script lang=ts>
+<!-- <svelte:options tag="map"/> -->
+<script lang="ts">
   import { onMount } from 'svelte';
   import type { MapOptions } from './types/mapOptions.ts';
   import { defaultMapOptions } from './types/mapOptions.ts';
   import ExternalLibrary from '$lib/misc/ExternalLibrary.svelte';
+
+  let className: string = '';
   // Map options
   export let apiKey: string = '';
   export let options: MapOptions = defaultMapOptions;
 
-  export let map: google.maps.Map | null = null;
+  let map: google.maps.Map;
   let container: HTMLElement;
 
   function initMap(): void {
-    if (map === null) {
-      map = new google.maps.Map(container, options);
-    }
+    map = new google.maps.Map(container, options);
   }
-
+  export { map };
+  export { className as class };
   onMount(() => {
     initMap();
   });
 </script>
 
-<ExternalLibrary url="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries=visualization&callback=initMap" on:loaded={initMap}/>
+<ExternalLibrary
+  url="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries=visualization&callback=initMap"
+  on:loaded={initMap}
+/>
 
-<div id="map" bind:this={container} />
+<div class="{className}" id="map" bind:this={container} />
 
 <style>
   #map {

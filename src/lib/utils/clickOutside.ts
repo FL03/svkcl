@@ -1,5 +1,3 @@
-
-
 function clickOutside(node: HTMLElement, opts?: string) {
   function detect({ target }: MouseEvent) {
     if (opts !== undefined) {

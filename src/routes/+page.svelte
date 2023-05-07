@@ -10,17 +10,14 @@
   <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 </div>
 
-<Card
-  --bg="blue"
-  --rounded="1.5rem"
->
+<Card class="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900" --rounded="1.5rem">
   <svelte:fragment slot="header">
     <h1>Card</h1>
   </svelte:fragment>
   <svelte:fragment slot="content">
     <p>Card content</p>
     <Button
-      --bg="cyan"
+      class="bg-gradient-to-br from-cyan-900 via-cyan-800 to-cyan-900"
       toggle={() => {
         count++;
       }}>{count}</Button

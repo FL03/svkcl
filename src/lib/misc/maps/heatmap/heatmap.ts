@@ -1,18 +1,18 @@
 export const heatmapGradients = [
-    "rgba(0, 255, 255, 0)",
-    "rgba(0, 255, 255, 1)",
-    "rgba(0, 191, 255, 1)",
-    "rgba(0, 127, 255, 1)",
-    "rgba(0, 63, 255, 1)",
-    "rgba(0, 0, 255, 1)",
-    "rgba(0, 0, 223, 1)",
-    "rgba(0, 0, 191, 1)",
-    "rgba(0, 0, 159, 1)",
-    "rgba(0, 0, 127, 1)",
-    "rgba(63, 0, 91, 1)",
-    "rgba(127, 0, 63, 1)",
-    "rgba(191, 0, 31, 1)",
-    "rgba(255, 0, 0, 1)",
+  'rgba(0, 255, 255, 0)',
+  'rgba(0, 255, 255, 1)',
+  'rgba(0, 191, 255, 1)',
+  'rgba(0, 127, 255, 1)',
+  'rgba(0, 63, 255, 1)',
+  'rgba(0, 0, 255, 1)',
+  'rgba(0, 0, 223, 1)',
+  'rgba(0, 0, 191, 1)',
+  'rgba(0, 0, 159, 1)',
+  'rgba(0, 0, 127, 1)',
+  'rgba(63, 0, 91, 1)',
+  'rgba(127, 0, 63, 1)',
+  'rgba(191, 0, 31, 1)',
+  'rgba(255, 0, 0, 1)'
 ];
 
 export function getPoints() {
@@ -516,6 +516,6 @@ export function getPoints() {
     new google.maps.LatLng(37.754665, -122.403242),
     new google.maps.LatLng(37.753837, -122.403172),
     new google.maps.LatLng(37.752986, -122.403112),
-    new google.maps.LatLng(37.751266, -122.403355),
+    new google.maps.LatLng(37.751266, -122.403355)
   ];
 }

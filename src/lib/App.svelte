@@ -1,5 +1,6 @@
 <script lang="ts">
-  export let props: string | undefined = '';
+  let props: string | undefined = '';
+  export { props as class };
 </script>
 
 <div class={props} id="app">
