@@ -1,3 +1,3 @@
-import clickOutside from './clickOutside.js';
+import clickOutside from './clickOutside.ts';
 
 export { clickOutside };

@@ -10,7 +10,10 @@
   <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 </div>
 
-<Card>
+<Card
+  --bg="blue"
+  --rounded="1.5rem"
+>
   <svelte:fragment slot="header">
     <h1>Card</h1>
   </svelte:fragment>

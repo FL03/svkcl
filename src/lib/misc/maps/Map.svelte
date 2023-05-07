@@ -24,7 +24,7 @@
   });
 </script>
 
-<ExternalLibrary {url} />
+<ExternalLibrary on:loaded={initMap} {url} />
 
 <div class="map" bind:this={container} />
 

@@ -38,6 +38,7 @@
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
     },
+    "./assets": "./dist/assets",
     "./core": {
       "types": "./dist/core/index.d.ts",
       "svelte": "./dist/core/index.js"
@@ -45,6 +46,10 @@
     "./misc": {
       "types": "./dist/misc/index.d.ts",
       "svelte": "./dist/misc/index.js"
+    },
+    "./sections": {
+      "types": "./dist/sections/index.d.ts",
+      "svelte": "./dist/sections/index.js"
     }
   },
   "files": [

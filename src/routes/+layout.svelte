@@ -14,6 +14,11 @@
   };
 </script>
 
+<svelte:head>
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</svelte:head>
+
 <App props="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert">
   <Navbar name={'svkcl'} {links}>
     <a href="/login">

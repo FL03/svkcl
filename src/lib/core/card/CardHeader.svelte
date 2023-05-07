@@ -2,7 +2,7 @@
 </script>
 
 <div class="card-header">
-  <slot name="header">Card</slot>
+  <slot/>
 </div>
 
 <style>

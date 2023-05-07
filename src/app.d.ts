@@ -7,6 +7,11 @@ declare global {
     // interface PageData {}
     // interface Platform {}
   }
+  namespace svelteHTML {
+    interface HTMLAttributes {
+      'on:clickoutside'?: (event: CustomEvent) => void;
+    }
+  }
 }
 
 export {};
