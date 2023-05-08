@@ -1,0 +1,32 @@
+{
+  "devDependencies": {
+    "@googlemaps/google-maps-services-js": "latest",
+    "@sveltejs/adapter-auto": "latest",
+    "@sveltejs/kit": "latest",
+    "@sveltejs/package": "latest",
+    "@svkcl/core": "file:../packages/core",
+    "@svkcl/google-maps": "file:../packages/maps",
+    "@svkcl/ui": "file:../packages/ui",
+    "@tailwindcss/forms": "latest",
+    "@tailwindcss/typography": "latest",
+    "@types/google.maps": "latest",
+    "autoprefixer": "latest",
+    "postcss": "latest",
+    "svelte": "latest",
+    "svelte-check": "latest",
+    "tailwindcss": "latest",
+    "tslib": "latest",
+    "typescript": "latest",
+    "vite": "beta"
+  },
+  "name": "@svkcl/sample",
+  "private": true,
+  "scripts": {
+    "build": "vite build && npm run package",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "dev": "vite dev --host --port 3000",
+    "preview": "vite preview --host --port 3000"
+  },
+  "type": "module"
+}

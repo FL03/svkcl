@@ -1,5 +1,7 @@
 # svkcl
 
+[![Node](https://github.com/FL03/svkcl/actions/workflows/nodejs.yml/badge.svg)](https://github.com/FL03/svkcl/actions/workflows/nodejs.yml)
+
 ---
 
 _**This library is currently in development and is not yet ready for use.**_

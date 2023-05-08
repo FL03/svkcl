@@ -1,24 +1,26 @@
-<script lang="ts">
+<script>
   import '$lib/assets/css/tailwind.css';
-
-  let bg = 'bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900';
 </script>
 
+<svelte:head>
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+</svelte:head>
+
 <div
-  class="flex flex-col grow nowrap m-0 p-0 min-h-screen min-w-full max-w-screen prose dark:prose-invert {bg}"
+  class="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert"
   id="app"
-/>
+>
+  <slot />
+</div>
 
 <style>
-  .bg-gradient-to-br {
-    background-image: linear-gradient(to bottom right, var(--from), var(--via), var(--to));
-  }
   #app {
-    align-items: center;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
     margin: 0;
     min-height: 100vh;
     min-width: 100vw;
