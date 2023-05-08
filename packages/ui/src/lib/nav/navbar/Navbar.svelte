@@ -9,6 +9,8 @@
   let lg = false;
   let open = false;
 
+  let props: string | undefined;
+
   // Allows the navbar to respond to external auth state
   export let auth = false;
   // Provides the links for the navbar
@@ -17,6 +19,8 @@
   export let name = 'SvelteKit';
   // Provides the favicon for the navbar
   export let src: string = favicon;
+
+  export { props as class };
   $: if (innerWidth > 1024) {
     lg = true;
   } else {
@@ -24,13 +28,9 @@
   }
 </script>
 
-<!-- <svelte:component this={lg ? options[0].component : options[1].component} /> -->
 <svelte:window bind:innerWidth />
 
-<nav
-  class="bg-transparent prose prose-invert min-w-full max-w-screen my-0 p-3 sticky top-0"
-  id="navbar"
->
+<nav class="bg-transparent prose prose-invert top-0 {props}" id="navbar">
   <NavLogo logo={src}>
     {name}
   </NavLogo>
@@ -61,13 +61,19 @@
   nav {
     align-items: var(--align, center);
     background-color: var(--bg, transparent);
+    border: var(--border, none);
+    box-shadow: var(--shadow, none);
+    color: var(--color, black);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: var(--justify, center);
-    max-height: 10vh;
-    max-width: 100vw;
-    min-width: 100%;
-    z-index: 50;
+    margin: var(--m, 0);
+    max-height: var(--max-height, 10vh);
+    max-width: var(--max-width, 100vw);
+    min-width: var(--min-width, 100%);
+    padding: var(--pd, 3rem);
+    position: var(--pos, sticky);
+    z-index: var(--z, 50);
   }
 </style>

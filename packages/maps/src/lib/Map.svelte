@@ -10,8 +10,6 @@
   export let libraries: string[] = ['visualization'];
   export let options: MapOptions = defaultMapOptions;
 
-  
-
   let map: google.maps.Map;
   let container: HTMLElement;
 
@@ -29,7 +27,9 @@
 </script>
 
 <Loader
-  url="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries={libraries.join(',')}&callback=initMap"
+  url="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries={libraries.join(
+    ','
+  )}&callback=initMap"
   on:loaded={initMap}
 />
 
