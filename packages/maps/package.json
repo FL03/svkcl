@@ -1,18 +1,21 @@
 {
+  "author": {
+    "email": "jo3mccain@icloud.com",
+    "name": "FL03",
+    "url": "https://github.com/FL03"
+  },
+  "bugs": "https://github.com/FL03/svkcl/issues",
+  "description": "SvelteKit component library for Google Maps",
   "devDependencies": {
+    "@googlemaps/google-maps-services-js": "latest",
     "@sveltejs/adapter-auto": "latest",
     "@sveltejs/kit": "latest",
     "@sveltejs/package": "latest",
-    "@tailwindcss/forms": "latest",
-    "@tailwindcss/typography": "latest",
     "@types/google.maps": "latest",
-    "@typescript-eslint/eslint-plugin": "latest",
-    "@typescript-eslint/parser": "latest",
     "autoprefixer": "latest",
     "postcss": "latest",
     "svelte": "latest",
     "svelte-check": "latest",
-    "tailwindcss": "latest",
     "tslib": "latest",
     "typescript": "latest",
     "vite": "beta"
@@ -21,17 +24,28 @@
     ".": {
       "svelte": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./assets": "./dist/assets"
   },
   "files": [
     "dist",
+    "dist/**/*",
     "!dist/**/*.test.*",
     "!dist/**/*.spec.*"
   ],
-  "name": "@svkcl/maps",
+  "homepage": "https://github.com/FL03/svkcl/wiki",
+  "license": "Apache-2.0",
+  "name": "@svkcl/google-maps",
   "peerDependencies": {
+    "@googlemaps/google-maps-services-js": "latest",
     "@sveltejs/kit": "latest",
+    "@types/google.maps": "latest",
     "svelte": "latest"
+  },
+  "readme": "https://github.com/FL03/svkcl/#README",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FL03/svkcl.git"
   },
   "scripts": {
     "build": "vite build && npm run package",
@@ -44,5 +58,6 @@
   },
   "svelte": "./dist/index.js",
   "type": "module",
-  "types": "./dist/index.d.ts"
+  "types": "./dist/index.d.ts",
+  "version": "0.0.1"
 }

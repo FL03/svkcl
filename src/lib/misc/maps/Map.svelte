@@ -28,7 +28,7 @@
   on:loaded={initMap}
 />
 
-<div class="{className}" id="map" bind:this={container} />
+<div class={className} id="map" bind:this={container} />
 
 <style>
   #map {

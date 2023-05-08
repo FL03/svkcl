@@ -7,7 +7,7 @@
   "bugs": "https://github.com/FL03/svkcl/issues",
   "bundledDependencies": [
     "@svkcl/core",
-    "@svkcl/maps"
+    "@svkcl/google-maps"
   ],
   "devDependencies": {
     "@googlemaps/google-maps-services-js": "latest",

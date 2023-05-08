@@ -1,31 +1,29 @@
-<script lang="ts">
+<script>
   import '$lib/assets/css/tailwind.css';
-
-  let bg = 'bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900';
 </script>
 
+<svelte:head>
+  <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+</svelte:head>
+
 <div
-  class="flex flex-col grow nowrap m-0 p-0 min-h-screen min-w-full max-w-screen prose dark:prose-invert {bg}"
+  class="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert"
   id="app"
 >
-  <Navbar name={'svkcl'} />
-  <main class="flex grow m-0 p-0 min-h-full min-w-full items-center justify-center">
-    <div class="container mx-auto">
-      <slot />
-    </div>
-  </main>
-  <Footer>
-    <svelte:fragment slot="lhs">
-      <a href="/">Home</a>
-    </svelte:fragment>
-    <svelte:fragment slot="content">
-      <span>SVKCL 2023 &copy</span>
-    </svelte:fragment>
-    <svelte:fragment slot="rhs">
-      <a href="/">Connect</a>
-    </svelte:fragment>
-  </Footer>
+  <slot />
 </div>
 
 <style>
+  #app {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    margin: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 0;
+  }
 </style>

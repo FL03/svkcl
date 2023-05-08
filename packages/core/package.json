@@ -1,4 +1,11 @@
 {
+  "author": {
+    "email": "jo3mccain@icloud.com",
+    "name": "FL03",
+    "url": "https://github.com/FL03"
+  },
+  "bugs": "https://github.com/FL03/svkcl/issues",
+  "description": "A complete component library for building elegant SvelteKit applications.",
   "devDependencies": {
     "@sveltejs/adapter-auto": "latest",
     "@sveltejs/kit": "latest",
@@ -21,17 +28,27 @@
     ".": {
       "svelte": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./assets": "./dist/assets",
+    "./utils": "./dist/utils/index.js"
   },
   "files": [
     "dist",
+    "dist/**/*",
     "!dist/**/*.test.*",
     "!dist/**/*.spec.*"
   ],
+  "homepage": "https://github.com/FL03/svkcl/wiki",
+  "license": "Apache-2.0",
   "name": "@svkcl/core",
   "peerDependencies": {
     "@sveltejs/kit": "latest",
     "svelte": "latest"
+  },
+  "readme": "https://github.com/FL03/svkcl/#README",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FL03/svkcl.git"
   },
   "scripts": {
     "build": "vite build && npm run package",
@@ -44,5 +61,6 @@
   },
   "svelte": "./dist/index.js",
   "type": "module",
-  "types": "./dist/index.d.ts"
+  "types": "./dist/index.d.ts",
+  "version": "0.0.0"
 }
