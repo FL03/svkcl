@@ -7,9 +7,12 @@
 </script>
 
 <div class="card {className}">
-  <section class="card-header">
-    <slot name="header" />
-  </section>
+  {#if $$slots.header}
+    <section class="card-header">
+      <slot name="header" />
+    </section>
+  {/if}
+  
   <section class="card-body">
     <slot name="content" />
   </section>
