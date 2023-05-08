@@ -1,5 +1,5 @@
 <script>
-  import { Button, Card } from '$lib/index.js';
+  import { Button, Card } from '@svkcl/core/cmp';
 
   let count = 0;
 </script>

@@ -8,3 +8,19 @@ updates:
     directory: /
     schedule:
       interval: daily
+  - package-ecosystem: npm
+    directory: /sample
+    schedule:
+      interval: daily
+  - package-ecosystem: npm
+    directory: /packages/core
+    schedule:
+      interval: daily
+  - package-ecosystem: npm
+    directory: /packages/maps
+    schedule:
+      interval: daily
+  - package-ecosystem: npm
+    directory: /packages/ui
+    schedule:
+      interval: daily
