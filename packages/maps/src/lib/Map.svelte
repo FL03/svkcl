@@ -7,7 +7,10 @@
   let props: string = '';
   // Map options
   export let apiKey: string = '';
+  export let libraries: string[] = ['visualization'];
   export let options: MapOptions = defaultMapOptions;
+
+  
 
   let map: google.maps.Map;
   let container: HTMLElement;
@@ -21,11 +24,12 @@
   export { props as class };
   onMount(() => {
     initMap();
+    console.log(libraries.join(','));
   });
 </script>
 
 <Loader
-  url="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries=visualization&callback=initMap"
+  url="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries={libraries.join(',')}&callback=initMap"
   on:loaded={initMap}
 />
 

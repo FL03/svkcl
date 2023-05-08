@@ -12,11 +12,16 @@
     "@sveltejs/package": "latest",
     "@tailwindcss/forms": "latest",
     "@tailwindcss/typography": "latest",
-    "@types/google.maps": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-svelte3": "latest",
     "postcss": "latest",
+    "prettier": "latest",
+    "prettier-plugin-svelte": "latest",
+    "publint": "latest",
     "svelte": "latest",
     "svelte-check": "latest",
     "tailwindcss": "latest",
@@ -26,11 +31,33 @@
   },
   "exports": {
     ".": {
-      "svelte": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
     },
     "./assets": "./dist/assets",
-    "./utils": "./dist/utils/index.js"
+    "./cmp": {
+      "types": "./dist/cmp/index.d.ts",
+      "svelte": "./dist/cmp/index.js"
+    },
+    "./misc": {
+      "types": "./dist/misc/index.d.ts",
+      "svelte": "./dist/misc/index.js"
+    },
+    "./nav": {
+      "types": "./dist/nav/index.d.ts",
+      "svelte": "./dist/nav/index.js"
+    },
+    "./sections": {
+      "types": "./dist/sections/index.d.ts",
+      "svelte": "./dist/sections/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts"
+    },
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "default": "./dist/utils/index.js"
+    }
   },
   "files": [
     "dist",
@@ -55,12 +82,14 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "dev": "vite dev --host --port 3000",
-    "package": "svelte-kit sync && svelte-package",
+    "format": "prettier --plugin-search-dir . --write .",
+    "lint": "prettier --plugin-search-dir . --check . && eslint .",
+    "package": "svelte-kit sync && svelte-package && publint",
     "prepublishOnly": "npm run package",
     "preview": "vite preview --host --port 3000"
   },
   "svelte": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "0.0.0"
+  "version": "0.0.2"
 }
