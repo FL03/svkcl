@@ -9,7 +9,7 @@
   let lg = false;
   let open = false;
 
-  let props: string | undefined;
+  let props: string | undefined = '';
 
   // Allows the navbar to respond to external auth state
   export let auth = false;

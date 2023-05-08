@@ -1,7 +1,7 @@
-<script>
+<script lang=ts>
   import Button from './Button.svelte';
 
-  export let btns;
+  export let btns: Button[];
 </script>
 
 <ul>
