@@ -1,5 +1,4 @@
 <script>
-
 </script>
 
 <svelte:head>
@@ -11,7 +10,7 @@
   class="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert"
   id="app"
 >
-  <main class="container mx-auto "><slot/></main>
+  <main class="container mx-auto"><slot /></main>
 </div>
 
 <style>

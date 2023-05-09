@@ -7,11 +7,11 @@ export { Banner };
 import Button, { ButtonGroup } from './btn/index.js';
 export { Button, ButtonGroup };
 
-import Card, { CardHeader } from './card/index.js';
-export { Card, CardHeader };
+import Card from './card/index.js';
+export { Card };
 
-import List, { FilterableList, ListElement } from './list/index.js';
-export { List, FilterableList, ListElement };
+import List, { ListElement } from './list/index.js';
+export { List, ListElement };
 
 import { Dropdown, DropItem, DropToggle } from './menu/index.js';
 export { Dropdown, DropItem, DropToggle };

@@ -1,4 +1,4 @@
-<script lang=ts>
+<script lang="ts">
   import Button from './Button.svelte';
 
   export let btns: Button[];

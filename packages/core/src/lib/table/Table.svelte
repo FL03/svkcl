@@ -2,7 +2,6 @@
   let props: string | undefined = '';
 
   export { props as class };
-
 </script>
 
 <table class={props}>
@@ -10,5 +9,4 @@
 </table>
 
 <style>
-  
 </style>

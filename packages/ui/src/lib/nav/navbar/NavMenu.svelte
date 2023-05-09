@@ -3,7 +3,6 @@
   import Navdrop from './navdrop/Navdrop.svelte';
   import NavItem from './NavItem.svelte';
 
-
   // Allows the
   export let auth = false;
   export let links: Link[] = [{ href: '/', label: 'Home' }];
@@ -19,8 +18,6 @@
     {/if}
   {/each}
 </div>
-
-
 
 <style>
 </style>

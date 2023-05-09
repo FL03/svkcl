@@ -1,4 +1,4 @@
-<script lang=ts>
+<script lang="ts">
   import App, { Footer, Navbar } from '@svkcl/ui';
   import type { Link } from '@svkcl/ui/types';
 
