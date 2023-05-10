@@ -17,6 +17,14 @@ export interface ZoomControlOptions {
   position?: number;
 }
 
+export declare interface MapStyle {
+  elementType: string;
+  featureType: string;
+  stylers: {
+    color: string;
+  }[];
+}
+
 /**
  * @description Map Options for the Google Maps Platform
  * @interface MapOptions
@@ -35,9 +43,9 @@ export interface MapOptions {
   mapTypeControlOptions?: MapTypeControlOptions;
   mapTypeId?: string;
   streetViewControl?: boolean;
+  styles?: MapStyle[] | google.maps.MapTypeStyle[];
   zoomControl?: boolean;
   zoomControlOptions?: ZoomControlOptions;
   zoom: number;
+  
 }
-
-export default MapOptions;
