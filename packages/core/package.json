@@ -67,9 +67,6 @@
       "types": "./dist/table/index.d.ts",
       "svelte": "./dist/table/index.js"
     },
-    "./types": {
-      "types": "./dist/types/index.d.ts"
-    },
     "./utils": {
       "types": "./dist/utils/index.d.ts",
       "svelte": "./dist/utils/index.js"
@@ -107,5 +104,5 @@
   "svelte": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "0.0.3"
+  "version": "0.0.4"
 }

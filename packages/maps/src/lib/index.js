@@ -5,7 +5,7 @@ import * as styles from './styles.js';
 
 export { styles };
 
-/** @type {import("./types/mapOptions.ts").MapOptions} */
+/** @type {import("./types/maps.ts").MapOptions} */
 export const defaultMapOptions = {
   center: { lat: 37.775, lng: -122.434 },
   mapTypeControl: true,
@@ -21,6 +21,7 @@ export const defaultMapOptions = {
   },
   zoom: 13
 };
+
 
 export { GoogleMaps, MapToggle };
 export default Map;

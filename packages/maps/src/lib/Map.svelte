@@ -1,12 +1,12 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import type { GoogleMapsLibraryProps, MapOptions } from '$lib/types/maps.ts';
+  import type { GoogleMapsLibraryProps, MapOptions } from '$lib/types/maps';
   import { defaultMapOptions, GoogleMaps } from '$lib/index.js';
 
   // Props
   let cls: string = '';
   export { cls as class };
-  export let loadwith: GoogleMapsLibraryProps | null;
+  export let loadwith: GoogleMapsLibraryProps | undefined;
   export let options: MapOptions = defaultMapOptions;
   export let styles: google.maps.MapTypeStyle[] | undefined;
   // Bindings

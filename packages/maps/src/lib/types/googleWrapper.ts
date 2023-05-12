@@ -1,4 +1,4 @@
-import type { MapOptions } from './mapOptions.ts';
+import type { MapOptions } from './maps.ts';
 
 export default class GoogleWrapper {
   google;

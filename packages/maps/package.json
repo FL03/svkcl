@@ -34,10 +34,7 @@
       "types": "./dist/index.d.ts"
     },
     "./assets": "./dist/assets",
-    "./types": {
-      "svelte": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
+    "./types/maps": "./dist/types/maps.d.ts"
   },
   "files": [
     "dist",
@@ -49,7 +46,6 @@
   "license": "Apache-2.0",
   "name": "@svkcl/google-maps",
   "peerDependencies": {
-    "@googlemaps/google-maps-services-js": "latest",
     "@sveltejs/kit": "latest",
     "@types/google.maps": "latest",
     "svelte": "latest"
@@ -73,5 +69,5 @@
   "svelte": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "0.0.3"
+  "version": "0.0.4"
 }
