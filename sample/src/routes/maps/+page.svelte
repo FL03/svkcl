@@ -30,7 +30,6 @@
   });
 </script>
 
-
 <section class="flex grow min-h-screen py-10 items-start justify-center">
   <div class="flex z-50 items-center justify-center absolute">
     <MapToggle toggle={toggleHeatmap} --bg="white" --color="black" --m="0 0.5rem">Heatmap</MapToggle

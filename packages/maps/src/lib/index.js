@@ -1,6 +1,9 @@
-import Loader from './Loader.svelte';
+import GoogleMaps from './GoogleMaps.svelte';
 import Map from './Map.svelte';
 import MapToggle from './MapToggle.svelte';
+import * as styles from './styles.js';
+
+export { styles };
 
 /** @type {import("./types/mapOptions.ts").MapOptions} */
 export const defaultMapOptions = {
@@ -19,5 +22,5 @@ export const defaultMapOptions = {
   zoom: 13
 };
 
-export { Loader, MapToggle };
+export { GoogleMaps, MapToggle };
 export default Map;

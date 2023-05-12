@@ -1,18 +1,11 @@
 <script lang="ts">
-  import '$lib/assets/css/tailwind.css';
-  import { redirect } from '@sveltejs/kit';
-  import App from '@svkcl/core';
-  import { Footer, Navbar } from '@svkcl/ui/nav';
+  import App, { Footer, Navbar } from '@svkcl/ui';
   import type { Link } from '@svkcl/ui/types';
 
   let links: Link[] = [
     { label: 'About', href: '/about' },
     { label: 'Maps', href: '/maps' }
   ];
-
-  let handleLogin = async () => {
-    redirect(303, '/login');
-  };
 </script>
 
 <svelte:head>
@@ -49,4 +42,7 @@
 </App>
 
 <style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 </style>

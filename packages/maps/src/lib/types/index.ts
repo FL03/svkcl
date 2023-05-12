@@ -1,3 +1,9 @@
-import type { MapOptions, MapTypeControlOptions, ZoomControlOptions } from './mapOptions.ts';
-
-export type { MapOptions, MapTypeControlOptions, ZoomControlOptions };
+import type {
+  GoogleMapsLibraries, 
+  GoogleMapsLibraryProps, 
+  MapConfig,
+  MapOptions,
+  MapTypeControlOptions,
+  ZoomControlOptions 
+} from './maps.ts';
+export type { GoogleMapsLibraries, GoogleMapsLibraryProps, MapConfig, MapOptions, MapTypeControlOptions, ZoomControlOptions };

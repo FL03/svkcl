@@ -33,7 +33,11 @@
       "svelte": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./assets": "./dist/assets"
+    "./assets": "./dist/assets",
+    "./types": {
+      "svelte": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "files": [
     "dist",
@@ -69,5 +73,5 @@
   "svelte": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "0.0.2"
+  "version": "0.0.3"
 }

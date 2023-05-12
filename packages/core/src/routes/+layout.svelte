@@ -1,5 +1,4 @@
 <script>
-  import '$lib/assets/css/tailwind.css';
 </script>
 
 <svelte:head>
@@ -11,10 +10,14 @@
   class="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert"
   id="app"
 >
-  <slot />
+  <main class="container mx-auto"><slot /></main>
 </div>
 
 <style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
   #app {
     box-sizing: border-box;
     display: flex;
