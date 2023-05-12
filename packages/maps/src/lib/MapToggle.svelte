@@ -15,13 +15,11 @@
 <style>
   button {
     align-items: var(--align, center);
-    background-color: var(--bg, inherit);
     border: var(--bd, thin solid var(--color));
     border-radius: var(--rounded, 0.75rem);
-    color: var(--color, inherit);
     display: var(--display, inline-flex);
     justify-content: var(--justify, center);
-    margin: var(--m, 0 auto);
+    margin: var(--m, 0 0.5rem);
     padding: var(--pd, 0.75rem 1.5rem);
   }
 </style>

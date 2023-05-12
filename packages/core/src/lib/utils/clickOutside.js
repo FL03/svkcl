@@ -1,3 +1,4 @@
+
 function clickOutside(node, opts) {
   function detect({ target }) {
     if (opts !== undefined) {

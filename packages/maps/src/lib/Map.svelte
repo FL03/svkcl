@@ -1,50 +1,47 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import type { MapOptions } from '$lib/types/mapOptions.ts';
-  import { Loader, defaultMapOptions } from '$lib/index.js';
+  import type { GoogleMapsLibraryProps, MapOptions } from '$lib/types/maps.ts';
+  import { defaultMapOptions, GoogleMaps } from '$lib/index.js';
 
-  // Component options
-  let props: string = '';
-  // Map options
-  export let apiKey: string = '';
-  export let libraries: string[] | undefined;
+  // Props
+  let cls: string = '';
+  export { cls as class };
+  export let loadwith: GoogleMapsLibraryProps | null;
   export let options: MapOptions = defaultMapOptions;
-
+  export let styles: google.maps.MapTypeStyle[] | undefined;
+  // Bindings
   let map: google.maps.Map;
   let container: HTMLElement;
 
   function initMap(): void {
-    map = new google.maps.Map(container, options);
+    map = new google.maps.Map(container, { ...options, styles });
   }
-  // read-only export of the map; enables external bindings to the map
-  export { map };
-  //
-  export { props as class };
+  // Exports
+  export { map }; // read-only export of the map; enables external bindings to the map
+
   onMount(() => {
     initMap();
   });
 </script>
 
-<Loader
-  url="https://maps.googleapis.com/maps/api/js?key={apiKey}&libraries={libraries?.join(
-    ','
-  )}&callback=initMap"
-  on:loaded={initMap}
-/>
+{#if loadwith}
+  <GoogleMaps apiKey={loadwith.apiKey} callback={'initMap'} libraries={loadwith.libraries} />
+{/if}
 
-<div class={props} id="map" bind:this={container}>
+<div class="map {cls}" id="map" bind:this={container}>
   <slot />
 </div>
 
 <style>
-  #map {
+  .map {
     border: var(--bd, thin solid) var(--color, #000);
     border-radius: var(--rounded, 1.5rem);
-    color: var(--color, #000);
-    display: var(--display, flex);
+  }
+  #map {
+    display: var(--display, inline-flex);
     margin: var(--m, 0 auto);
-    max-height: var(--max-height, 75vh);
-    max-width: var(--max-width, 75vw);
+    max-height: var(--max-height, 100vh);
+    max-width: var(--max-width, 100vw);
     min-height: var(--min-height, 25vh);
     min-width: var(--min-width, 25vw);
     padding: var(--pd, 0);
