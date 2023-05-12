@@ -33,7 +33,10 @@
       "svelte": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./assets": "./dist/assets"
+    "./assets": "./dist/assets",
+    "./types": {
+      "types": "./dist/types/index.d.ts"
+    }
   },
   "files": [
     "dist",

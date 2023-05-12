@@ -2,7 +2,7 @@
   import { env } from '$env/dynamic/public';
   import { onMount } from 'svelte';
 
-  import Map, { styles } from '@svkcl/google-maps';
+  import { Map, styles } from '@svkcl/google-maps';
   import { getPoints, heatmapGradients } from './heatmap.ts';
 
   // Values
