@@ -1,26 +1,8 @@
-import GoogleMaps from './GoogleMaps.svelte';
-import Map from './Map.svelte';
-import MapToggle from './MapToggle.svelte';
-import * as styles from './styles.js';
+import GoogleMaps from '$lib/GoogleMaps.svelte';
+import Map from '$lib/Map.svelte';
+import MapToggle from '$lib/MapToggle.svelte';
 
-export { styles };
+import * as styles from '$lib/styles.js';
 
-/** @type {import("./types/mapOptions.ts").MapOptions} */
-export const defaultMapOptions = {
-  center: { lat: 37.775, lng: -122.434 },
-  mapTypeControl: true,
-  mapTypeControlOptions: {
-    mapTypeIds: ['hybrid', 'roadmap', 'terrain', 'satellite'],
-    position: 3
-  },
-  mapTypeId: 'hybrid',
-  streetViewControl: false,
-  zoomControl: true,
-  zoomControlOptions: {
-    position: 7
-  },
-  zoom: 13
-};
-
-export { GoogleMaps, MapToggle };
-export default Map;
+export { styles }
+export { GoogleMaps, Map, MapToggle };

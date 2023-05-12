@@ -1,31 +1,42 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import type { GoogleMapsLibraryProps, MapOptions } from '$lib/types/maps.ts';
-  import { defaultMapOptions, GoogleMaps } from '$lib/index.js';
-
+  import GoogleMaps from '$lib/GoogleMaps.svelte';
   // Props
   let cls: string = '';
-  export { cls as class };
-  export let loadwith: GoogleMapsLibraryProps | null;
-  export let options: MapOptions = defaultMapOptions;
+  export let center: google.maps.LatLng | google.maps.LatLngLiteral = { lat: 37.775, lng: -122.434 };
+  export let loadwith: { apiKey: string, libraries: string[] | undefined } | undefined;
+  export let options: google.maps.MapOptions | undefined = {
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+      mapTypeIds: ['hybrid', 'roadmap', 'terrain', 'satellite'],
+      position: 3
+    },
+    mapTypeId: 'hybrid',
+    streetViewControl: false,
+    zoomControl: true,
+    zoomControlOptions: {
+      position: 7
+    },
+  };
   export let styles: google.maps.MapTypeStyle[] | undefined;
+  export let zoom: number = 13;
   // Bindings
   let map: google.maps.Map;
   let container: HTMLElement;
 
   function initMap(): void {
-    map = new google.maps.Map(container, { ...options, styles });
+    map = new google.maps.Map(container, { ...options, center, styles, zoom });
   }
   // Exports
   export { map }; // read-only export of the map; enables external bindings to the map
-
+  export { cls as class };
   onMount(() => {
     initMap();
   });
 </script>
 
 {#if loadwith}
-  <GoogleMaps apiKey={loadwith.apiKey} callback={'initMap'} libraries={loadwith.libraries} />
+  <GoogleMaps apiKey={loadwith.apiKey} callback={'initMap'} libraries={loadwith.libraries} on:loaded={initMap}/>
 {/if}
 
 <div class="map {cls}" id="map" bind:this={container}>

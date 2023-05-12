@@ -15,9 +15,12 @@
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "autoprefixer": "latest",
+    "classnames": "latest",
     "eslint": "latest",
     "eslint-config-prettier": "latest",
     "eslint-plugin-svelte3": "latest",
+    "flowbite": "latest",
+    "flowbite-svelte": "latest",
     "postcss": "latest",
     "prettier": "latest",
     "prettier-plugin-svelte": "latest",
@@ -32,11 +35,6 @@
     ".": {
       "svelte": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    },
-    "./assets": "./dist/assets",
-    "./types": {
-      "svelte": "./dist/index.js",
-      "types": "./dist/index.d.ts"
     }
   },
   "files": [
@@ -49,7 +47,6 @@
   "license": "Apache-2.0",
   "name": "@svkcl/google-maps",
   "peerDependencies": {
-    "@googlemaps/google-maps-services-js": "latest",
     "@sveltejs/kit": "latest",
     "@types/google.maps": "latest",
     "svelte": "latest"
@@ -73,5 +70,5 @@
   "svelte": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "version": "0.0.3"
+  "version": "0.0.4"
 }

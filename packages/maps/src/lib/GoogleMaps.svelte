@@ -1,13 +1,10 @@
 <script lang="ts">
   import { createEventDispatcher, onMount } from 'svelte';
-  import { GoogleMapsLibraries } from '$lib/types/maps.ts';
 
   // Props
   export let apiKey: string = '';
   export let callback: string = 'initMap';
-  export let libraries: GoogleMapsLibraries[] | string[] | undefined = [
-    GoogleMapsLibraries.visualization
-  ];
+  export let libraries: string[] | undefined = ['visualization'];
 
   // Bindings
   let script: HTMLScriptElement;

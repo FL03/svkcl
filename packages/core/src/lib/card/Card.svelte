@@ -50,8 +50,6 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .card .header {
-  }
   .card-body {
     flex-direction: column;
     flex-grow: 1;

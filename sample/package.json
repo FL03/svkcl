@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@googlemaps/google-maps-services-js": "latest",
+    "@popperjs/core": "latest",
     "@sveltejs/adapter-auto": "latest",
     "@sveltejs/kit": "latest",
     "@sveltejs/package": "latest",
@@ -11,6 +12,9 @@
     "@tailwindcss/typography": "latest",
     "@types/google.maps": "latest",
     "autoprefixer": "latest",
+    "classnames": "latest",
+    "flowbite": "latest",
+    "flowbite-svelte": "latest",
     "postcss": "latest",
     "svelte": "latest",
     "svelte-check": "latest",
