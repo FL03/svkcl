@@ -2,7 +2,8 @@
   import { env } from '$env/dynamic/public';
   import { onMount } from 'svelte';
 
-  import { Map, MapToggle, styles } from '$lib/index.js';
+  import { Map, MapToggle } from '$lib/index.js';
+  import * as styles from '$lib/styles.js';
   import { getPoints, heatmapGradients } from './heatmap.ts';
   
   import { GoogleMapsLibraries } from '$lib/types/maps.ts';

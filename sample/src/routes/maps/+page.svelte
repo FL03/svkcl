@@ -78,7 +78,7 @@
   <Map
     loadwith={{
       apiKey: env.PUBLIC_GOOGLE_MAPS_API_KEY,
-      libraries: [GoogleMapsLibraries.places, GoogleMapsLibraries.visualization]
+      libraries: ['places', 'visualization']
     }}
     styles={styles.darkModeMapStyle}
     bind:map

@@ -1,12 +1,24 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { defaultMapOptions, GoogleMaps } from '$lib/index.js';
+  import GoogleMaps from '$lib/GoogleMaps.svelte';
 
   // Props
   let cls: string = '';
   export let center: google.maps.LatLng | google.maps.LatLngLiteral = { lat: 37.775, lng: -122.434 };
   export let loadwith: { apiKey: string, libraries: string[] | undefined } | undefined;
-  export let options: { [key: string]: string } = defaultMapOptions;
+  export let options: { [key: string]: string } | undefined = {
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+      mapTypeIds: ['hybrid', 'roadmap', 'terrain', 'satellite'],
+      position: 3
+    },
+    mapTypeId: 'hybrid',
+    streetViewControl: false,
+    zoomControl: true,
+    zoomControlOptions: {
+      position: 7
+    },
+  };
   export let styles: google.maps.MapTypeStyle[] | undefined;
   export let zoom: number = 13;
   // Bindings
@@ -25,7 +37,7 @@
 </script>
 
 {#if loadwith}
-  <GoogleMaps apiKey={loadwith.apiKey} callback={'initMap'} libraries={loadwith.libraries} />
+  <GoogleMaps apiKey={loadwith.apiKey} callback={'initMap'} libraries={loadwith.libraries} on:loaded={initMap}/>
 {/if}
 
 <div class="map {cls}" id="map" bind:this={container}>
