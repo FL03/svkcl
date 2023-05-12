@@ -3,6 +3,7 @@
   import { onMount } from 'svelte';
 
   import { Map, MapToggle } from '$lib/index.js';
+  import { Button, ButtonGroup } from 'flowbite-svelte';
   import * as styles from '$lib/styles.js';
   import { getPoints, heatmapGradients } from './heatmap.ts';
 
@@ -68,12 +69,12 @@
 </script>
 
 <section class="flex flex-col grow min-h-screen py-10">
-  <div class="flex max-w-screen px-3 z-50 items-center justify-center absolute">
-    <MapToggle toggle={toggleHeatmap} --bg="grey">Heatmap</MapToggle>
-    <MapToggle toggle={changeGradient}>Gradient</MapToggle>
-    <MapToggle class="bg-white text-black mx-3" toggle={changeOpacity}>Opacity</MapToggle>
-    <MapToggle class="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900" toggle={changeRadius}>Radius</MapToggle>
-  </div>
+  <ButtonGroup>
+    <Button class="bg-white text-black" on:click={toggleHeatmap}>Heatmap</Button>
+    <Button class="bg-white text-black" on:click={changeGradient}>Gradient</Button>
+    <Button class="bg-white text-black" on:click={changeRadius}>Radius</Button>
+    <Button class="bg-white text-black" on:click={changeOpacity}>Opacity</Button>
+  </ButtonGroup>
 
   <Map
     loadwith={{

@@ -15,9 +15,12 @@
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "autoprefixer": "latest",
+    "classnames": "latest",
     "eslint": "latest",
     "eslint-config-prettier": "latest",
     "eslint-plugin-svelte3": "latest",
+    "flowbite": "latest",
+    "flowbite-svelte": "latest",
     "postcss": "latest",
     "prettier": "latest",
     "prettier-plugin-svelte": "latest",
@@ -33,7 +36,6 @@
       "svelte": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./assets": "./dist/assets",
     "./styles": {
       "svelte": "./dist/styles.js",
       "types": "./dist/styles.d.ts"
