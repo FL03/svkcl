@@ -5,8 +5,6 @@
   import { Map, MapToggle } from '$lib/index.js';
   import * as styles from '$lib/styles.js';
   import { getPoints, heatmapGradients } from './heatmap.ts';
-  
-  import { GoogleMapsLibraries } from '$lib/types/maps.ts';
 
   // Values
   let query: string = 'San Francisco';

@@ -1,5 +1,5 @@
 
-
+/** @type {google.maps.MapTypeStyle[]} */
 export const darkModeMapStyle = [
   { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
   { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },

@@ -1,4 +1,5 @@
 {
+  "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "allowJs": true,
@@ -10,6 +11,5 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true
-  },
-  "extends": "./.svelte-kit/tsconfig.json"
+  }
 }

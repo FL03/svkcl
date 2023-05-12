@@ -1,12 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import GoogleMaps from '$lib/GoogleMaps.svelte';
-  import type { MapsConfig } from '$lib/types/maps.ts';
   // Props
   let cls: string = '';
   export let center: google.maps.LatLng | google.maps.LatLngLiteral = { lat: 37.775, lng: -122.434 };
   export let loadwith: { apiKey: string, libraries: string[] | undefined } | undefined;
-  export let options: MapsConfig | undefined = {
+  export let options: google.maps.MapOptions | undefined = {
     mapTypeControl: true,
     mapTypeControlOptions: {
       mapTypeIds: ['hybrid', 'roadmap', 'terrain', 'satellite'],
