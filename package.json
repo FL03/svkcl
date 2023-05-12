@@ -43,7 +43,7 @@
     "ui:package": "npm run package --workspace=@svkcl/ui"
   },
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "workspaces": [
     "packages/*",
     "sample"
