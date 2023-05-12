@@ -7,3 +7,6 @@ export { Arrow, StackedIcon };
 
 import { File, Folder } from './fs/index.js';
 export { File, Folder };
+
+import { Loading } from './indicators/index.js';
+export { Loading };
