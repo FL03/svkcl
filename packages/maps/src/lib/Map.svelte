@@ -1,24 +1,24 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import type { GoogleMapsLibraryProps, MapOptions } from '$lib/types/maps';
   import { defaultMapOptions, GoogleMaps } from '$lib/index.js';
 
   // Props
   let cls: string = '';
-  export { cls as class };
-  export let loadwith: GoogleMapsLibraryProps | undefined;
-  export let options: MapOptions = defaultMapOptions;
+  export let center: google.maps.LatLng | google.maps.LatLngLiteral = { lat: 37.775, lng: -122.434 };
+  export let loadwith: { apiKey: string, libraries: string[] | undefined } | undefined;
+  export let options: { [key: string]: string } = defaultMapOptions;
   export let styles: google.maps.MapTypeStyle[] | undefined;
+  export let zoom: number = 13;
   // Bindings
   let map: google.maps.Map;
   let container: HTMLElement;
 
   function initMap(): void {
-    map = new google.maps.Map(container, { ...options, styles });
+    map = new google.maps.Map(container, { ...options, center, styles, zoom });
   }
   // Exports
   export { map }; // read-only export of the map; enables external bindings to the map
-
+  export { cls as class };
   onMount(() => {
     initMap();
   });

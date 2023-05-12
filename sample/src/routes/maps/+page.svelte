@@ -6,6 +6,7 @@
   import { getPoints, heatmapGradients } from './heatmap.ts';
 
   // Values
+  let a: { [key: string]: string } = { a: 'a'}
   let query: string = 'San Francisco';
   // Bindings
   let map: google.maps.Map;

@@ -2,7 +2,7 @@
   import { env } from '$env/dynamic/public';
   import { onMount } from 'svelte';
 
-  import Map, { MapToggle, styles } from '$lib/index.js';
+  import { Map, MapToggle, styles } from '$lib/index.js';
   import { getPoints, heatmapGradients } from './heatmap.ts';
   
   import { GoogleMapsLibraries } from '$lib/types/maps.ts';
@@ -79,7 +79,7 @@
   <Map
     loadwith={{
       apiKey: env.PUBLIC_GOOGLE_MAPS_API_KEY,
-      libraries: [GoogleMapsLibraries.places, GoogleMapsLibraries.visualization]
+      libraries: ['places', 'visualization']
     }}
     styles={styles.darkModeMapStyle}
     bind:map
