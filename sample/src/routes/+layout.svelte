@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { GoogleMaps } from '@svkcl/google-maps';
-
+  import "$lib/assets/css/app.css";
   import { Appbar, Footer, Navbar } from '$lib/cmp/index.js';
 </script>
 
@@ -8,11 +7,6 @@
   <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 </svelte:head>
-
-<GoogleMaps
-  apiKey={env.PUBLIC_GOOGLE_MAPS_API_KEY}
-  libraries={['places', 'visualization']}
-/>
 
 <div class="bg-white dark:bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert" id="app">
   <Navbar/>
@@ -23,21 +17,10 @@
   </main>
 
   <Footer/>
-  <AppBar/>
+  <Appbar/>
 </div>
 
 <style>
-  @import '@fontsource/fira-mono';
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  :global(body) {
-    box-sizing: border-box;
-    margin: 0;
-    min-height: 100vh;
-    padding: 0;
-  }
 
   #app {
     display: flex;

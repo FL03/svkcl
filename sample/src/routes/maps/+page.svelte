@@ -3,10 +3,10 @@
   import { onMount } from 'svelte';
 
   import { Map, styles } from '@svkcl/google-maps';
+  import { Button, ButtonGroup } from 'flowbite-svelte';
   import { getPoints, heatmapGradients } from './heatmap.ts';
 
   // Values
-  let a: { [key: string]: string } = { a: 'a'}
   let query: string = 'San Francisco';
   // Bindings
   let map: google.maps.Map;
@@ -68,12 +68,12 @@
 </script>
 
 <section class="flex flex-col grow min-h-screen py-10">
-  <div class="flex max-w-screen px-3 z-50 items-center justify-center absolute">
-    <button class="inline-flex rounded mx-3 px-3 py-1" on:click={toggleHeatmap}>Heatmap</button>
-    <button class="bg-white inline-flex rounded mx-3 px-3 py-1" on:click={changeGradient}>Gradient</button>
-    <button class="bg-white inline-flex rounded mx-3 px-3 py-1" on:click={changeOpacity}>Opacity</button>
-    <button class="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 inline-flex rounded mx-3 px-3 py-1" on:click={changeRadius}>Radius</button>
-  </div>
+  <ButtonGroup class="space-x-px">
+    <Button gradient shadow="green" color="green" on:click={toggleHeatmap}>Heatmap</Button>
+    <Button gradient shadow="green" color="green" on:click={changeGradient}>Gradient</Button>
+    <Button gradient shadow="green" color="green" on:click={changeRadius}>Radius</Button>
+    <Button gradient shadow="green" color="green" on:click={changeOpacity}>Opacity</Button>
+  </ButtonGroup>
 
   <Map
     loadwith={{apiKey: env.PUBLIC_GOOGLE_MAPS_API_KEY, libraries: ['places', 'visualization']}}
@@ -91,13 +91,11 @@
         placeholder="Search for a place"
         on:keydown={(e) => e.key === 'Enter' && searchMap(query)}
       />
-      <button on:click={() => searchMap(query)}>Search</button>
+      <Button shadow="blue" gradient color="cyanToBlue" on:click={() => searchMap(query)}>Search</Button>
     </div>
   </div>
 </section>
 
 <style>
-  .toggle {
-    background-color: bisque;
-  }
+
 </style>
