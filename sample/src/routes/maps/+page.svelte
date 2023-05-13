@@ -76,10 +76,7 @@
   </div>
 
   <Map
-    loadwith={{
-      apiKey: env.PUBLIC_GOOGLE_MAPS_API_KEY,
-      libraries: ['places', 'visualization']
-    }}
+    loadwith={{apiKey: env.PUBLIC_GOOGLE_MAPS_API_KEY, libraries: ['places', 'visualization']}}
     styles={styles.darkModeMapStyle}
     bind:map
     --min-height="75vh"

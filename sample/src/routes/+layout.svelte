@@ -1,14 +1,18 @@
 <script lang="ts">
-  import { BottomNav, BottomNavItem, Tooltip } from 'flowbite-svelte';
-  import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from 'flowbite-svelte'
-  import AppBar from '$lib/AppBar.svelte';
-  import Navbar from '$lib/Navbar.svelte';
+  import { GoogleMaps } from '@svkcl/google-maps';
+
+  import { Appbar, Footer, Navbar } from '$lib/cmp/index.js';
 </script>
 
 <svelte:head>
   <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 </svelte:head>
+
+<GoogleMaps
+  apiKey={env.PUBLIC_GOOGLE_MAPS_API_KEY}
+  libraries={['places', 'visualization']}
+/>
 
 <div class="bg-white dark:bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert" id="app">
   <Navbar/>
@@ -18,18 +22,12 @@
     </div>
   </main>
 
-  <Footer customClass="bg-transparent">
-    <FooterCopyright href="/" by="Flowbite™" year={2022} />
-    <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm prose dark:prose-invertsm:mt-0">
-      <FooterLink href="/">About</FooterLink>
-      <FooterLink href="/">Privacy Policy</FooterLink>
-      <FooterLink href="/">Licensing</FooterLink>
-      <FooterLink href="/">Contact</FooterLink>
-    </FooterLinkGroup>
-  </Footer>
+  <Footer/>
   <AppBar/>
 </div>
+
 <style>
+  @import '@fontsource/fira-mono';
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
