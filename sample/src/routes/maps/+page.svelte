@@ -4,7 +4,7 @@
 
   import { Map, styles } from '@svkcl/google-maps';
   import { Button, ButtonGroup } from 'flowbite-svelte';
-  import { getPoints, heatmapGradients } from './heatmap.ts';
+  import { getPoints, heatmapGradients } from '$lib/heatmap.ts';
 
   // Values
   let query: string = 'San Francisco';
@@ -77,6 +77,7 @@
 
   <Map
     loadwith={{apiKey: env.PUBLIC_GOOGLE_MAPS_API_KEY, libraries: ['places', 'visualization']}}
+    options={{mapId: env.PUBLIC_GOOGLE_MAPS_ID}}
     styles={styles.darkModeMapStyle}
     bind:map
     --min-height="75vh"

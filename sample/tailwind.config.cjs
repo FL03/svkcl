@@ -8,7 +8,12 @@ const config = {
   theme: {
     extend: {}
   },
-  plugins: [require('flowbite/plugin'), require('@tailwindcss/forms'), require('@tailwindcss/typography')]
+  plugins: [
+    require('flowbite/plugin'), 
+    require('flowbite-typography'),
+    require('@tailwindcss/forms'), 
+    require('@tailwindcss/typography')
+  ]
 };
 
 module.exports = config;
