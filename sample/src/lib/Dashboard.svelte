@@ -1,4 +1,4 @@
-<script lang=ts>
+<script lang="ts">
   import { Footer } from '$lib/cmp/index.js';
   import { Button, Card, Tabs, TabItem } from 'flowbite-svelte';
   let count = 0;
@@ -50,5 +50,4 @@
 </Tabs>
 
 <style>
-
 </style>

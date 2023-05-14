@@ -8,7 +8,7 @@
 </script>
 
 <Navbar
-  navClass="px-2 sm:px-4 sticky w-full z-50 top-0 left-0"
+  navClass="px-2 sm:px-4 py-1.5 sticky w-full z-50 top-0 left-0"
   fluid
   color="none"
   let:hidden
@@ -22,7 +22,6 @@
   </NavBrand>
   <!-- Links -->
   <NavUl {hidden}>
-    <NavLi href="/" active={true}>Home</NavLi>
     <NavLi href="/about">About</NavLi>
   </NavUl>
   <!-- Gutter -->

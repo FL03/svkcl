@@ -6,17 +6,17 @@
 
 <Tabs
   style="full"
-  defaultClass="flex rounded-lg divide-x divide-gray-200 shadow dark:divide-gray-700"
+  defaultClass="flex rounded-lg divide-x divide-gray-200 shadow dark:divide-gray-700 pb-3"
 >
   <TabItem class="w-full" open>
-    <span slot="title">Profile</span>
+    <span slot="title">Feed</span>
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
       incididunt ut labore et dolore magna aliqua.
     </p>
   </TabItem>
   <TabItem class="w-full">
-    <span slot="title">Dashboard</span>
+    <span slot="title">Messages</span>
     <Card class="prose dark:prose-invert bg-transparent">
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         Noteworthy technology acquisitions 2021
@@ -31,17 +31,10 @@
     </Card>
   </TabItem>
   <TabItem class="w-full">
-    <span slot="title">Feed</span>
+    <span slot="title">History</span>
   </TabItem>
   <TabItem class="w-full">
-    <span slot="title">Settings</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400">
-      <b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua.
-    </p>
-  </TabItem>
-  <TabItem class="w-full">
-    <span slot="title">Users</span>
+    <span slot="title">Friends</span>
     <p class="text-sm text-gray-500 dark:text-gray-400">
       <b>Users:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
       ut labore et dolore magna aliqua.

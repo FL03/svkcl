@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+  import '$lib/assets/styles.css';
 </script>
 
 <svelte:head>
