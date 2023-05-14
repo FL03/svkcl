@@ -1,7 +1,4 @@
-<script lang="ts">
-  import { onMount } from 'svelte';
-  import { navigating } from '$app/stores';
-  import { Loading } from '$lib/misc/indicators/index.js';
+<script>
 </script>
 
 <svelte:head>
@@ -13,10 +10,9 @@
   class="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert"
   id="app"
 >
-  <!-- {#if navigating}
-  <Loading/>
-{/if} -->
-  <main class="container mx-auto"><slot /></main>
+  <main class="container mx-auto">
+    <slot />
+  </main>
 </div>
 
 <style>
@@ -24,8 +20,14 @@
   @tailwind components;
   @tailwind utilities;
 
-  #app {
+  :global(body) {
     box-sizing: border-box;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  #app {
     display: flex;
     flex-direction: column;
     flex-grow: 1;

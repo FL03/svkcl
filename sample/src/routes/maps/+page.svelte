@@ -16,6 +16,10 @@
   let heatmap: google.maps.visualization.HeatmapLayer;
   let service: google.maps.places.PlacesService;
 
+  let withHeatmap: boolean = true;
+  let radius: number = 3;
+  let opacity: number = 0.2;
+
 
   function toggleHeatmap(): void {
     heatmap.setMap(heatmap.getMap() ? null : map);
@@ -76,9 +80,12 @@
   styles={styles.darkModeMapStyle}
   bind:map
   --min-height="80vh"
-  --min-width="75vw"
+  --min-width="100%"
 />
 <Toolbar>
+  <ToolbarGroup>
+    <Toggle checked color="blue" on:click={toggleHeatmap}></Toggle>
+  </ToolbarGroup>
   <ToolbarGroup>
     <ToolbarButton on:click={toggleHeatmap}>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

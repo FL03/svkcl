@@ -1,7 +1,7 @@
 <script lang="ts">
   import '$lib/assets/css/app.css';
   import { env } from '$env/dynamic/public';
-  import { Appbar, NavBar } from '$lib/cmp/index.js';
+  import { Appbar, Navbar } from '$lib/cmp/index.js';
   import { GoogleMaps } from '@svkcl/google-maps';
 </script>
 
@@ -12,13 +12,13 @@
 
 <GoogleMaps
   apiKey={env.PUBLIC_GOOGLE_MAPS_API_KEY}
-  libraries={['places', 'visualization']}
+  libraries={['geometry', 'places', 'visualization']}
 />
 
 <div
   class="flex flex-col min-h-screen min-w-full max-w-screen m-0 p-0 bg-white dark:bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert"
 >
-  <NavBar />
+  <Navbar />
   <main class="container mx-auto items-center m-0">
     <slot />
   </main>
