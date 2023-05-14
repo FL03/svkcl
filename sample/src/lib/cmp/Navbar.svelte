@@ -63,9 +63,7 @@
       <span class="block text-sm"> Bonnie Green </span>
       <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
     </DropdownHeader>
-    <DropdownItem>Dashboard</DropdownItem>
-    <DropdownItem>Settings</DropdownItem>
-    <DropdownItem>Earnings</DropdownItem>
+    <DropdownItem divClass="text-black">Dashboard</DropdownItem>
     <DropdownDivider />
     <DropdownItem>Sign out</DropdownItem>
   </Dropdown>
