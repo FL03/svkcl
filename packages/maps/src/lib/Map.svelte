@@ -4,8 +4,11 @@
   import { defaultMapOptions } from '$lib/options.js';
   // Props
   let cls: string = '';
-  export let center: google.maps.LatLng | google.maps.LatLngLiteral = { lat: 37.775, lng: -122.434 };
-  export let loadwith: { apiKey: string, libraries: string[] | undefined } | undefined;
+  export let center: google.maps.LatLng | google.maps.LatLngLiteral = {
+    lat: 37.775,
+    lng: -122.434
+  };
+  export let loadwith: { apiKey: string; libraries: string[] | undefined } | undefined;
   export let mapId: string | undefined;
   export let options: google.maps.MapOptions = defaultMapOptions;
   export let styles: google.maps.MapTypeStyle[] | undefined;
@@ -26,7 +29,12 @@
 </script>
 
 {#if loadwith}
-  <GoogleMaps apiKey={loadwith.apiKey} callback={'initMap'} libraries={loadwith.libraries} on:loaded={initMap}/>
+  <GoogleMaps
+    apiKey={loadwith.apiKey}
+    callback={'initMap'}
+    libraries={loadwith.libraries}
+    on:loaded={initMap}
+  />
 {/if}
 
 <div class="map {cls}" id="map" bind:this={container}>

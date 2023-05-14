@@ -17,7 +17,6 @@
 </div>
 
 <style>
-
   :global(body) {
     box-sizing: border-box;
     margin: 0;

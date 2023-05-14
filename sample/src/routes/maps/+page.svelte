@@ -76,8 +76,8 @@
   </ButtonGroup>
 
   <Map
-    loadwith={{apiKey: env.PUBLIC_GOOGLE_MAPS_API_KEY, libraries: ['places', 'visualization']}}
-    options={{mapId: env.PUBLIC_GOOGLE_MAPS_ID}}
+    loadwith={{ apiKey: env.PUBLIC_GOOGLE_MAPS_API_KEY, libraries: ['places', 'visualization'] }}
+    options={{ mapId: env.PUBLIC_GOOGLE_MAPS_ID }}
     styles={styles.darkModeMapStyle}
     bind:map
     --min-height="75vh"
@@ -92,11 +92,12 @@
         placeholder="Search for a place"
         on:keydown={(e) => e.key === 'Enter' && searchMap(query)}
       />
-      <Button shadow="blue" gradient color="cyanToBlue" on:click={() => searchMap(query)}>Search</Button>
+      <Button shadow="blue" gradient color="cyanToBlue" on:click={() => searchMap(query)}
+        >Search</Button
+      >
     </div>
   </div>
 </section>
 
 <style>
-
 </style>

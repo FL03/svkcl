@@ -1,4 +1,4 @@
-<script lang=ts>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { navigating } from '$app/stores';
   import { Loading } from '$lib/misc/indicators/index.js';
@@ -13,10 +13,10 @@
   class="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert"
   id="app"
 >
-<!-- {#if navigating}
+  <!-- {#if navigating}
   <Loading/>
 {/if} -->
-<main class="container mx-auto"><slot /></main>
+  <main class="container mx-auto"><slot /></main>
 </div>
 
 <style>
