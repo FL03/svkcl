@@ -15,6 +15,7 @@
     "flowbite": "latest",
     "flowbite-svelte": "latest",
     "flowbite-typography": "latest",
+    "marked": "latest",
     "postcss": "latest",
     "svelte": "latest",
     "svelte-check": "latest",

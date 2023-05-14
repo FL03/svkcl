@@ -1,7 +1,7 @@
 <script lang="ts">
   import '$lib/assets/css/app.css';
   import { env } from '$env/dynamic/public';
-  import { Appbar, Navbar } from '$lib/cmp/index.js';
+  import { Appbar, Navbar } from '$lib/cmp/index.ts';
   import { GoogleMaps } from '@svkcl/google-maps';
 </script>
 

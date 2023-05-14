@@ -1,28 +1,85 @@
 <script lang="ts">
   import { enhance } from '$app/forms';
+  import { flip } from 'svelte/animate';
+  import { scale } from 'svelte/transition';
+
   import { Button, Checkbox, Label, Input } from 'flowbite-svelte';
+
+  export let article;
 </script>
 
-<form class="flex flex-col space-y-6" action="#" use:enhance>
-  <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
-  <Label class="space-y-2">
-    <span>Email</span>
-    <Input type="email" name="email" placeholder="name@company.com" required />
-  </Label>
-  <Label class="space-y-2">
-    <span>Your password</span>
-    <Input type="password" name="password" placeholder="•••••" required />
-  </Label>
-  <div class="flex items-start">
-    <Checkbox>Remember me</Checkbox>
-    <a href="/" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
-      >Lost password?</a
-    >
+<form use:enhance method="POST">
+  <fieldset class="form-group">
+    <input
+      name="title"
+      class="form-control form-control-lg"
+      placeholder="Article Title"
+      value={article.title}
+    />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <input
+      name="description"
+      class="form-control"
+      placeholder="What's this article about?"
+      value={article.description}
+    />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <textarea
+      name="body"
+      class="form-control"
+      rows="8"
+      placeholder="Write your article (in markdown)"
+      value={article.body}
+    />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <input
+      class="form-control"
+      placeholder="Enter tags"
+      on:keydown={(event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          if (!article.tagList.includes(event.target.value)) {
+            article.tagList = [...article.tagList, event.target.value];
+          }
+
+          event.target.value = '';
+        }
+      }}
+    />
+  </fieldset>
+
+  <div class="tag-list">
+    {#each article.tagList as tag, i (tag)}
+      <button
+        transition:scale|local={{ duration: 200 }}
+        animate:flip={{ duration: 200 }}
+        class="tag-default tag-pill"
+        on:click|preventDefault={() => {
+          article.tagList = [...article.tagList.slice(0, i), ...article.tagList.slice(i + 1)];
+        }}
+        aria-label="Remove {tag} tag"
+      >
+        <i class="ion-close-round" />
+        {tag}
+      </button>
+    {/each}
   </div>
-  <Button type="submit" class="w-full1">Login to your account</Button>
-  <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-    Not registered? <a href="/" class="text-blue-700 hover:underline dark:text-blue-500"
-      >Create account</a
-    >
-  </div>
+
+  {#each article.tagList as tag}
+    <input hidden name="tag" value={tag} />
+  {/each}
+
+  <button class="btn btn-lg pull-xs-right btn-primary">Publish Article</button>
 </form>
+
+<style>
+  .tag-pill {
+    border: none;
+  }
+</style>

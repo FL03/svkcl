@@ -99,17 +99,13 @@
   </BottomNavItem>
 </BottomNav>
 
-
 <Modal title="New Post" bind:open={modalToggle} size="lg" autoclose>
-  <form class="flex flex-col grow">
-    <label class="flex grow nowrap">
-      <input
-        class="w-full px-4 py-2 mr-auto text-gray-700 bg-gray-200 border border-gray-200 rounded-lg focus:border-primary-600 focus:outline-none dark:bg-gray-800 dark:border-gray-700 dark:focus:border-primary-500"
-        id="title"
-        placeholder="Title"
-        type="text"
-      />
-      Title
-    </label>
-  </form>
+  <PostForm
+    article={{
+      title: '',
+      description: '',
+      body: '',
+      tagList: []
+    }}
+  />
 </Modal>
