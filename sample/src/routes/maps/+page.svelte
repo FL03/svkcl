@@ -6,7 +6,15 @@
   import { Button, ButtonGroup } from 'flowbite-svelte';
   import { getPoints, heatmapGradients } from '$lib/heatmap.ts';
 
-  import { Range, Toggle, Toolbar, ToolbarButton, ToolbarGroup, Tooltip } from 'flowbite-svelte';
+  import {
+    Input,
+    Range,
+    Toggle,
+    Toolbar,
+    ToolbarButton,
+    ToolbarGroup,
+    Tooltip
+  } from 'flowbite-svelte';
 
   // Values
   let opacity: number = 0.2;
@@ -23,7 +31,7 @@
   }
 
   function adjustRadius(): void {
-    heatmap.set('radius', heatmap.get('radius') ? null : radius);
+    heatmap.set('radius', radius);
   }
 
   function createMarker(place: google.maps.places.PlaceResult) {
@@ -47,7 +55,11 @@
         for (var i = 0; i < results.length; i++) {
           createMarker(results[i]);
         }
-        if (results[0].geometry?.location) map.setCenter(results[0].geometry.location);
+        if (results[0].geometry?.location) {
+          map.setCenter(results[0].geometry.location);
+          infowindow.setPosition(results[0].geometry.location);
+          inforwindow.getContent();
+        }
       }
     });
   }
@@ -64,7 +76,7 @@
 </script>
 
 <Map
-  mapdId={env.PUBLIC_GOOGLE_MAPS_ID}
+  mapId={env.PUBLIC_GOOGLE_MAPS_ID}
   styles={styles.darkModeMapStyle}
   bind:map
   --min-height="75vh"
@@ -78,7 +90,7 @@
     >
   </ToolbarGroup>
   <ToolbarGroup>
-    <Range bind:value={radius} min={0} max={15} on:change={adjustRadius} />
+    <Range bind:value={radius} min={0} max={50} on:change={adjustRadius} />
     <Tooltip arrow={false}>Update the radius of the entries</Tooltip>
     <ToolbarButton
       on:click={() => heatmap.set('gradient', heatmap.get('gradient') ? null : heatmapGradients)}
@@ -120,27 +132,27 @@
   <ToolbarGroup>
     <input
       class="border border-gray-300 rounded-md p-2"
-      bind:value={query}
+      id="search"
       placeholder="Search for a place"
+      bind:value={query}
       on:keydown={(e) => e.key === 'Enter' && searchMap(query)}
     />
     <ToolbarButton on:click={() => searchMap(query)}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        class="w-6 h-6 text-gray-500 dark:text-gray-400"
         fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
         stroke="currentColor"
-        class="w-6 h-6"
-      >
-        <path
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path
           stroke-linecap="round"
           stroke-linejoin="round"
-          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
-        />
-      </svg>
+          stroke-width="2"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+        /></svg
+      >
     </ToolbarButton>
-    <Tooltip arrow={false}>Search for a place</Tooltip>
   </ToolbarGroup>
 </Toolbar>
 

@@ -46,7 +46,7 @@
       appBtnPosition="custom"
       btnDefault="inline-flex items-center justify-center w-10 h-10 font-medium bg-primary-600 rounded-full hover:bg-primary-700 group focus:ring-4 focus:ring-primary-300 focus:outline-none dark:focus:ring-primary-800"
       on:click={() => (modalToggle = !modalToggle)}
-      >
+    >
       <svg
         class="w-6 h-6 text-gray-500 dark:text-gray-400"
         fill="currentColor"
@@ -99,6 +99,17 @@
   </BottomNavItem>
 </BottomNav>
 
-<Modal title="Terms of Service" bind:open={modalToggle} autoclose>
-  <PostForm/>
+
+<Modal title="New Post" bind:open={modalToggle} size="lg" autoclose>
+  <form class="flex flex-col grow">
+    <label class="flex grow nowrap">
+      <input
+        class="w-full px-4 py-2 mr-auto text-gray-700 bg-gray-200 border border-gray-200 rounded-lg focus:border-primary-600 focus:outline-none dark:bg-gray-800 dark:border-gray-700 dark:focus:border-primary-500"
+        id="title"
+        placeholder="Title"
+        type="text"
+      />
+      Title
+    </label>
+  </form>
 </Modal>
