@@ -1,5 +1,5 @@
 import Appbar from './Appbar.svelte';
 import Footer from './Footer.svelte';
-import Navbar from './Navbar.svelte';
+import NavBar from './NavBar.svelte';
 
-export { Appbar, Footer, Navbar };
+export { Appbar, Footer, NavBar };

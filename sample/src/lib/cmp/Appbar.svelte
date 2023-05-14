@@ -2,7 +2,7 @@
   import { BottomNav, BottomNavItem, Tooltip } from 'flowbite-svelte';
 </script>
 
-<BottomNav position="sticky" navType="border" innerDiv="grid-cols-5">
+<BottomNav position="sticky" navType="group" innerDiv="grid-cols-5">
   <BottomNavItem btnName="Home" appBtnPosition="left" href="/">
     <a href="/">
       <svg
@@ -27,7 +27,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-6 h-6"
+        class="w-6 h-6 mb-1 prose dark:prose-invert group-hover:text-primary-600 dark:group-hover:text-primary-500"
       >
         <path
           stroke-linecap="round"

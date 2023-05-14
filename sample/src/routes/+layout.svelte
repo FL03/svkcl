@@ -1,6 +1,8 @@
 <script lang="ts">
   import '$lib/assets/css/app.css';
-  import { Appbar, Footer, Navbar } from '$lib/cmp/index.js';
+  import { env } from '$env/dynamic/public';
+  import { Appbar, NavBar } from '$lib/cmp/index.js';
+  import { GoogleMaps } from '@svkcl/google-maps';
 </script>
 
 <svelte:head>
@@ -8,30 +10,21 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 </svelte:head>
 
-<div
-  class="bg-white dark:bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert"
-  id="app"
->
-  <Navbar />
-  <main class="flex grow m-0 p-0 min-h-full min-w-full items-center justify-center">
-    <div class="container mx-auto">
-      <slot />
-    </div>
-  </main>
+<GoogleMaps
+  apiKey={env.PUBLIC_GOOGLE_MAPS_API_KEY}
+  libraries={['places', 'visualization']}
+/>
 
-  <Footer />
-  <Appbar />
+<div
+  class="flex flex-col min-h-screen min-w-full max-w-screen m-0 p-0 bg-white dark:bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 prose dark:prose-invert"
+>
+  <NavBar />
+  <main class="container mx-auto items-center m-0">
+    <slot />
+  </main>
 </div>
 
+<Appbar />
+
 <style>
-  #app {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    flex-wrap: wrap;
-    margin: 0;
-    min-height: 100vh;
-    min-width: 100vw;
-    padding: 0;
-  }
 </style>
