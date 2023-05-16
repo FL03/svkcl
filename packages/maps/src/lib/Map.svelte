@@ -8,10 +8,10 @@
     lat: 37.775,
     lng: -122.434
   };
-  export let loadwith: { apiKey: string; libraries: string[] | undefined } | undefined;
-  export let mapId: string | undefined;
-  export let options: google.maps.MapOptions = defaultMapOptions;
-  export let styles: google.maps.MapTypeStyle[] | undefined;
+  export let loadwith: { apiKey: string; libraries: string[] | undefined } | null = null;
+  export let mapId: string | null = null;
+  export let options: google.maps.MapOptions | null = defaultMapOptions;
+  export let styles: google.maps.MapTypeStyle[] | null = null;
   export let zoom: number = 13;
   // Bindings
   let map: google.maps.Map;
@@ -37,9 +37,7 @@
   />
 {/if}
 
-<div class="map {cls}" id="map" bind:this={container}>
-  <slot />
-</div>
+<div class="map {cls}" id="map" bind:this={container} />
 
 <style>
   .map {
@@ -52,7 +50,7 @@
     max-height: var(--max-height, 100vh);
     max-width: var(--max-width, 100vw);
     min-height: var(--min-height, 25vh);
-    min-width: var(--min-width, 25vw);
+    min-width: var(--min-width, 100%);
     padding: var(--pd, 0);
   }
 </style>

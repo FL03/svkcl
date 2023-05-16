@@ -3,8 +3,6 @@ export interface Banner {
   subtitle: string;
 }
 
-
-
 export interface Props {
   class: string;
 }

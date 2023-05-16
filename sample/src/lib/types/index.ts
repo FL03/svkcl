@@ -8,11 +8,11 @@ import type { User, UserFilter, UserName } from './users.ts';
 export { User, UserFilter, UserName };
 
 export interface Link {
-    href: string;
-    label: string;
-    protected?: boolean;
+  href: string;
+  label: string;
+  protected?: boolean;
 }
 
 export declare interface Theme {
-    mode: 'light' | 'dark';
+  mode: 'light' | 'dark';
 }

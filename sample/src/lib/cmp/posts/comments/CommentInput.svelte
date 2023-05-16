@@ -1,6 +1,6 @@
 <script lang="ts">
   import { enhance } from '$app/forms';
-  
+
   let placeholder = 'https://static.productionready.io/images/smiley-cyrus.jpg';
 
   export let user;

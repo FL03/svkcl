@@ -2,59 +2,87 @@
 
 ---
 
-_**This library is currently in development and is not yet ready for use.**_
-
 This is a Svelte library for Google Maps. It is based on the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview).
 
-## Creating a project
+## Getting Started
 
-If you're seeing this, you've probably already done this step. Congrats!
+Add the library to your project:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm install --save-dev @svkcl/google-maps @types/google.maps
 ```
 
-## Developing
+### Initialize the Google Maps library
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Create a .env file with the following content:
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+PUBLIC_GOOGLE_MAPS_API_KEY=<your-api-key>
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+#### _**Using `loadwith` parameter**_
 
-## Building
+```svelte
+<script lang="ts">
+  import { env } from '$env/dynamic/public';
+  import { Map } from '@svkcl/google-maps';
 
-To build your library:
+  let map: google.maps.Map;
+</script>
 
-```bash
-npm run package
+<Map
+  loadwith={{
+    apiKey: env.PUBLIC_GOOGLE_MAPS_API_KEY,
+    libraries: ['places', 'visualization']
+  }}
+  styles={styles.darkModeMapStyle}
+  bind:map
+  --min-height="75vh"
+/>
 ```
 
-To create a production version of your showcase app:
+or
 
-```bash
-npm run build
+#### _**Add the GoogleMaps Component to your +layout.svelte**_
+
+```svelte
+<script>
+  import { env } from '$env/dynamic/public';
+  import { GoogleMaps } from '@svkcl/google-maps';
+</script>
+
+<GoogleMaps apiKey={env.PUBLIC_GOOGLE_MAPS_API_KEY} libraries={['places', 'visualization']} />
 ```
 
-You can preview the production build with `npm run preview`.
+then use the `Map` component in your pages:
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```svelte
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { Map } from '@svkcl/google-maps';
 
-## Publishing
+  // Values
+  let query: string = '';
+  // Bindings
+  let map: google.maps.Map;
+  let infowindow: google.maps.InfoWindow;
+  let service: google.maps.places.PlacesService;
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
+  onMount(() => {
+    infowindow = new google.maps.InfoWindow();
+    service = new google.maps.places.PlacesService(map);
+  });
+</script>
 
-To publish your library to [npm](https://www.npmjs.com):
+<Map bind:map --min-height="75vh" />
 
-```bash
-npm publish
+<div class="flex relative bottom-0">
+  <input
+    class="border border-gray-300 rounded-md p-2"
+    placeholder="Search for a place"
+    bind:value={query}
+    on:keydown={(e) => e.key === 'Enter' && searchMap(query)}
+  />
+  <button on:click={() => searchMap(query)}>Search</button>
+</div>
 ```
