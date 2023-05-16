@@ -1,6 +1,6 @@
-import * as api from '$lib//api/realworld.ts';
-import { fail } from '@sveltejs/kit';
-import { get_articles } from './articles.ts';
+import * as api from '$lib//api/realworld';
+import { error, fail } from '@sveltejs/kit';
+import { get_articles } from './articles';
 
 /** @type {import('@sveltejs/kit').PageServerLoad} */
 export async function load(event) {

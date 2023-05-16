@@ -1,4 +1,4 @@
-import * as api from '$lib/api/realworld.ts';
+import * as api from '$lib/api/realworld';
 import { error, redirect } from '@sveltejs/kit';
 
 /** @type {import('@sveltejs/kit').PageServerLoad} */

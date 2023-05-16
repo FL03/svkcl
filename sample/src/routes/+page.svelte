@@ -1,5 +1,5 @@
 <script>
-  import { Footer } from '$lib/cmp/index.ts';
+  import { Footer } from '$lib/cmp';
   import { Button, Card, Tabs, TabItem } from 'flowbite-svelte';
   let count = 0;
 </script>

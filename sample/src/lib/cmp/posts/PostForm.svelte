@@ -5,7 +5,7 @@
 
   import { Button, Checkbox, Label, Input } from 'flowbite-svelte';
 
-  export let article;
+  export let article: import('$lib/models/index.ts').Post;
 </script>
 
 <form use:enhance method="POST">

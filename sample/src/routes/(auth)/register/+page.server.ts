@@ -1,5 +1,5 @@
 import { fail, redirect } from '@sveltejs/kit';
-import * as api from '$lib/api/realworld.ts';
+import * as api from '$lib/api/realworld';
 
 /** @type {import('@sveltejs/kit').PageServerLoad} */
 export async function load({ parent }) {

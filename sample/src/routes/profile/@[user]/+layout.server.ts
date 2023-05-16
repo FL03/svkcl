@@ -1,4 +1,4 @@
-import * as api from '$lib/api/realworld.ts';
+import * as api from '$lib/api/realworld';
 
 /** @type {import('@sveltejs/kit').LayoutServerLoad} */
 export async function load({ locals, params }) {
