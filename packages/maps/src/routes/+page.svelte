@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { env } from '$env/dynamic/public';
   import { onMount } from 'svelte';
 
   import { Map, MapToggle } from '$lib/index.js';
@@ -76,16 +75,7 @@
     <Button class="bg-white text-black" on:click={changeOpacity}>Opacity</Button>
   </ButtonGroup>
 
-  <Map
-    loadwith={{
-      apiKey: env.PUBLIC_GOOGLE_MAPS_API_KEY,
-      libraries: ['places', 'visualization']
-    }}
-    styles={styles.darkModeMapStyle}
-    bind:map
-    --min-height="75vh"
-    --min-width="75vw"
-  />
+  <Map styles={styles.darkModeMapStyle} bind:map --min-height="75vh" />
 
   <div>
     <div class="flex relative bottom-0">
@@ -101,7 +91,4 @@
 </section>
 
 <style>
-  .toggle {
-    background-color: bisque;
-  }
 </style>

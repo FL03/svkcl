@@ -1,13 +1,12 @@
 {
   "devDependencies": {
+    "@fontsource/fira-mono": "latest",
     "@googlemaps/google-maps-services-js": "latest",
     "@popperjs/core": "latest",
     "@sveltejs/adapter-auto": "latest",
     "@sveltejs/kit": "latest",
     "@sveltejs/package": "latest",
-    "@svkcl/core": "file:../packages/core",
     "@svkcl/google-maps": "file:../packages/maps",
-    "@svkcl/ui": "file:../packages/ui",
     "@tailwindcss/forms": "latest",
     "@tailwindcss/typography": "latest",
     "@types/google.maps": "latest",
@@ -15,6 +14,8 @@
     "classnames": "latest",
     "flowbite": "latest",
     "flowbite-svelte": "latest",
+    "flowbite-typography": "latest",
+    "marked": "latest",
     "postcss": "latest",
     "svelte": "latest",
     "svelte-check": "latest",
